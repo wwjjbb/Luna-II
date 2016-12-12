@@ -1,0 +1,73 @@
+Description
+-----------
+
+This plasmoid displays the current phase of the moon and shows the dates
+of the important moon phases in the same month (last new moon, first quarter,
+full moon, third quarter and next new moon). You can navigate to previous or
+future moon phases by clicking the arrow keys. Clicking the middle button
+returns to the current dates.
+
+This plasmoid is entirely written in QML + JavaScript.
+
+Installation
+------------
+
+Run the following in the main directory of the project:
+  plasmapkg -i .
+
+Create package
+--------------
+
+Run the following in the main directory of the project:
+  zip -r ../plasma-applet-luna-qml.zip .
+  mv ../plasma-applet-luna-qml.zip ../plasma-applet-luna-qml.plasmoid
+
+License
+-------
+
+Copyright (C) 2011, 2012, 2013 Glad Deschrijver <glad.deschrijver@gmail.com>
+
+The JavaScript code is based on the C++ code of the original Luna plasmoid
+in the KDE Plasma Workspace. This C++ code is licensed as follows:
+  Copyright 1996 Christopher Osburn <chris@speakeasy.org>
+  Copyright 1998,2000  Stephan Kulow <coolo@kde.org>
+  Copyright 2008 by Davide Bettio <davide.bettio@kdemail.net>
+  licensed under the GNU GPL version 2 or later.
+
+The luna images are extracted from the luna SVG file created by:
+  Copyright 2009 Jose Alcala (project manager), Dan Gerhards (moon artwork),
+                 Jeremy M. Todaro (shadows and layout)
+  (available at http://kde-look.org/content/show.php/luna.svgz+(full+SVG+image)?content=106013
+  original available at http://www.public-domain-photos.com/free-cliparts/science/astronomy/the_moon_dan_gerhards_01-5094.htm)
+  released in the public domain
+
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+Possible bug warning
+--------------------
+
+In contents/code/lunacalc.js a reasonable lower approximation for the number
+of lunations since the New Moon of January 6, 2000 is calculated in order to
+reduce the number of iterations in a costly while loop and thus speed up the
+startup of the plasmoid.  Since the lunation duration is not fixed, it may
+happen that the calculated number of lunations is too high, and then the
+plasmoid will display phases of the moon which are one month in the future.
+Since the average lunation duration is used, this bug will only occasionaly
+appear, if it appears at all.  This can be solved by setting the variable
+lunationDuration to a higher value (with the negative impact that the startup
+of the plasmoid may be slower).
+
+Known limitations
+-----------------
+
+- The custom date format entry field should only be enabled when "Custom" is
+selected in the combobox above it.
+- The link in the "What's This" text of the date format entry field doesn't
+work.
