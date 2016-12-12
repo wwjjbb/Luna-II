@@ -7,23 +7,66 @@ full moon, third quarter and next new moon). You can navigate to previous or
 future moon phases by clicking the arrow keys. Clicking the middle button
 returns to the current dates.
 
-This plasmoid is entirely written in QML + JavaScript.
+This plasmoid is a port to Plasma 5 of Luna QML 1.4 (https://store.kde.org/p/1002036/)
 
 Installation
 ------------
 
-Run the following in the main directory of the project:
-  plasmapkg -i .
+A. Run the following in the main directory ("package") of the project:
 
-Create package
---------------
+Local install (~/.local/share/plasma/plasmoids)
+  $ plasmapkg2 -i .
+  
+Global installation (/usr/local/share/plasma/plasmoids)
+  # plasmapkg2 -g -i .
+  
+To uninstall:
 
-Run the following in the main directory of the project:
-  zip -r ../plasma-applet-luna-qml.zip .
-  mv ../plasma-applet-luna-qml.zip ../plasma-applet-luna-qml.plasmoid
+Local:
+  $ plasmapkg2 -r org.kde.userbase.plasma.luna-ii
+
+Global:
+  # plasmapkg2 -g -r org.kde.userbase.plasma.luna-ii
+  
+B. Use CMake
+
+  1. Unpack to directory luna-ii-plasmoid
+  2. Create an empty directory, luna-ii-plasmoid-build,  and cd into it
+  2. Run: # cmake ../luna-ii-plasmoid
+
+Custom Date Formats
+-------------------
+For example: dddd, dd-MM-yyyy  => Saturday, 10-Dec-2016
+
+ d    the day as number without a leading zero (1 to 31)
+ dd   the day as number with a leading zero (01 to 31)
+ ddd  the abbreviated localized day name (e.g. 'Mon' to 'Sun'). Uses QDate::shortDayName().
+ dddd the long localized day name (e.g. 'Monday' to 'Qt::Sunday'). Uses QDate::longDayName().
+ M    the month as number without a leading zero (1-12)
+ MM   the month as number with a leading zero (01-12)
+ MMM  the abbreviated localized month name (e.g. 'Jan' to 'Dec'). Uses QDate::shortMonthName().
+ MMMM the long localized month name (e.g. 'January' to 'December'). Uses QDate::longMonthName().
+ yy   the year as two digit number (00-99)
+ yyyy the year as four digit number
+
+In addition the following expressions can be used to specify the time:
+ h   the hour without a leading zero (0 to 23 or 1 to 12 if AM/PM display)
+ hh  the hour with a leading zero (00 to 23 or 01 to 12 if AM/PM display)
+ m   the minute without a leading zero (0 to 59)
+ mm  the minute with a leading zero (00 to 59)
+ s   the second without a leading zero (0 to 59)
+ ss  the second with a leading zero (00 to 59)
+ z   the milliseconds without leading zeroes (0 to 999)
+ zzz the milliseconds with leading zeroes (000 to 999)
+ AP  use AM/PM display. AP will be replaced by either "AM" or "PM".
+ ap  use am/pm display. ap will be replaced by either "am" or "pm".
 
 License
 -------
+
+Copyright 2016 Bill Binder <dxtwjb@gmail.com>
+
+Updated the Luna QML plasmoid from Plasma 4 to Plasma 5.
 
 Copyright (C) 2011, 2012, 2013 Glad Deschrijver <glad.deschrijver@gmail.com>
 
@@ -67,7 +110,6 @@ of the plasmoid may be slower).
 Known limitations
 -----------------
 
-- The custom date format entry field should only be enabled when "Custom" is
-selected in the combobox above it.
-- The link in the "What's This" text of the date format entry field doesn't
-work.
+- The "Long" date format does not display properly if a shorter date format
+  has already been displayed - the dialog does not change width after it
+  has been displayed. Restart sorts it out.

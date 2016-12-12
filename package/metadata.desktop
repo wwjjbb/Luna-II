@@ -1,21 +1,21 @@
 [Desktop Entry]
-Name=Luna (QML)
+Name=Luna (II)
 Name[ar]=لونا
-Name[eu]=Ilargia (QML)
-Name[fr]=Lune (QML)
-Name[gl]=Lúa (QML)
+Name[eu]=Ilargia (II)
+Name[fr]=Lune (II)
+Name[gl]=Lúa (II)
 Name[he]=ירח
 Name[ko]=달
-Name[nl]=Maan (QML)
-Name[nn]=Månefaseindikator (QML)
-Name[oc]=Tai (QML)
+Name[nl]=Maan (II)
+Name[nn]=Månefaseindikator (II)
+Name[oc]=Tai (II)
 Name[pa]=ਲੂਨਾ
-Name[pt_BR]=Lua (QML)
-Name[ru]=Луна (QML)
-Name[sr]=Луна (QML)
+Name[pt_BR]=Lua (II)
+Name[ru]=Луна (II)
+Name[sr]=Луна (II)
 Name[th]=ข้างขึ้น/ข้างแรม
-Name[uk]=Луна (QML)
-Name[x-test]=xxLuna (QML)xx
+Name[uk]=Луна (II)
+Name[x-test]=xxLuna (II)xx
 Name[zh_CN]=月相
 Comment=Display moon phases for your location
 Comment[ar]=أظهر أطوار القمر في المكان الذي انت فيه
@@ -58,7 +58,7 @@ Comment[x-test]=xxDisplay moon phases for your locationxx
 Comment[zh_CN]=显示您位置的月相
 Comment[zh_TW]=顯示您所在位置的月相
 
-Icon=luna
+Icon=preferences-system-time
 Type=Service
 X-KDE-ServiceTypes=Plasma/Applet
 
@@ -66,10 +66,10 @@ X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
 X-Plasma-DefaultSize=100,100
 
-X-KDE-PluginInfo-Author=Glad Deschrijver
-X-KDE-PluginInfo-Email=glad.deschrijver@gmail.com
-X-KDE-PluginInfo-Name=luna-qml
-X-KDE-PluginInfo-Version=1.4
+X-KDE-PluginInfo-Author=Bill Binder
+X-KDE-PluginInfo-Email=dxtwjb@gmail.com
+X-KDE-PluginInfo-Name=org.kde.userbase.plasma.luna-ii
+X-KDE-PluginInfo-Version=2.0
 X-KDE-PluginInfo-Website=http://userbase.kde.org/Plasma
 X-KDE-PluginInfo-Category=Astronomy
 X-KDE-PluginInfo-Depends=

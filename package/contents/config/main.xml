@@ -16,11 +16,11 @@
     </entry>
     <entry name="showBackground" type="Bool">
       <label>Show background</label>
-      <default>true</default>
+      <default>false</default>
     </entry>
     <entry name="dateFormat" type="Enum">
       <label>Date format</label>
-      <default>2</default>
+      <default>3</default>
       <choices>
         <choice name="Text date"/>
         <choice name="Short date"/>

@@ -1,5 +1,7 @@
 /**
 
+    Copyright 2016 Bill Binder <dxtwjb@gmail.com>
+    Updated the Luna QML plasmoid from Plasma 4 to Plasma 5.
     Copyright (C) 2011, 2012, 2013 Glad Deschrijver <glad.deschrijver@gmail.com>
 
     This program is free software; you can redistribute it and/or modify
@@ -17,78 +19,128 @@
 
 */
 
-import QtQuick 1.1
-import org.kde.plasma.core 0.1 as PlasmaCore
+import QtQuick 2.1
+import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.plasmoid 2.0
+import QtQuick.Layouts 1.3 as QtLayouts
+import QtQuick.Controls 1.2 as QtControls
+import org.kde.plasma.components 2.0 as PlasmaComponents
 
-import "plasmapackage:/code/phases.js" as Phases
-import "plasmapackage:/code/lunacalc.js" as LunaCalc
+import "../code/phases.js" as Phases
+import "../code/lunacalc.js" as LunaCalc
 
 Item {
-	id: main
-	property int minimumWidth
-	property int minimumHeight
-	property int maximumWidth
-	property int maximumHeight
-	property int preferredWidth
-	property int preferredHeight
+    id: main
+    property int minimumWidth
+    property int minimumHeight
+    property int maximumWidth
+    property int maximumHeight
+    property int preferredWidth
+    property int preferredHeight
+    property var currentPhase
+    
+    property bool showBackground: Plasmoid.configuration.showBackground
+    property int hemisphere: Plasmoid.configuration.hemisphere
+    property int dateFormat: Plasmoid.configuration.dateFormat
+    property string dateFormatString: Plasmoid.configuration.dateFormatString
+    
+    Plasmoid.backgroundHints: showBackground ? "DefaultBackground" : "NoBackground"
+    Plasmoid.preferredRepresentation: Plasmoid.compactRepresentation
+    
+    Plasmoid.toolTipItem: Item {
+        width: 160
+        height: 50
+        QtLayouts.ColumnLayout {
+            spacing: 15
+            anchors.horizontalCenter: parent.horizontalCenter
+            QtControls.Label {
+                text: currentPhase.text
+                font.bold: true
+                font.pixelSize: 15
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+            QtControls.Label {
+                text: currentPhase.subText
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+        }
+    }
+    
+    Plasmoid.compactRepresentation: Item {
+        id: compact
+        
+        property int hemisphere: main.hemisphere
+        property bool showBackground: main.showBackground
 
-	Component.onCompleted: {
-		// refresh moon image
-		plasmoid.addEventListener("dataUpdated", dataUpdated);
-		dataEngine("time").connectSource("Local", main, 360000, PlasmaCore.AlignToHour);
+        Component.onCompleted: updateDetails()
+    
+        onHemisphereChanged: updateDetails()
 
-		// change configuration
-		plasmoid.addEventListener("ConfigChanged", configChanged);
-		configChanged();
+        function updateDetails() {
+            // set the correct image for the moon
+            currentPhase = LunaCalc.getCurrentPhase();
+            lunaIcon.phaseNumber = currentPhase.number;
+            
+            lunaIcon.hemisphere = hemisphere;
+        }
 
-		plasmoid.setAspectRatioMode(ConstrainedSquare);
-	}
+        Timer {
+            id: hourlyTimer
+            interval: 60 * 60 * 1000 // 60 minutes
+            repeat: true
+            running: true
+            onTriggered: updateDetails() 
+        }
 
-	function dataUpdated(source, data) {
-		// set the correct image for the moon
-		var currentPhase = LunaCalc.getCurrentPhase();
-		lunaIcon.phaseNumber = currentPhase.number
+        LunaIcon {
+            id: lunaIcon
+            hemisphere: hemisphere
+            anchors.fill: parent
+            
+            MouseArea {
+                anchors.fill: parent
+                onClicked: plasmoid.expanded = !plasmoid.expanded
+            }
+        }
 
-		// set tooltip text
-		lunaToolTip.mainText = currentPhase.text;
-		lunaToolTip.subText = currentPhase.subText;
+    }
+    
+    Plasmoid.fullRepresentation: Rectangle {
+        id: full
+        
+        property alias lw_width: lunaWidget.width
+        property alias lw_height: lunaWidget.height
+        
+        /* I cannot figure out ANY way to change the size of this
+         * object AFTER it has been created. The lw_width value
+         * DOES get changed, it just has no effect on setting this
+         * width value.
+         * 
+         * I would settle for making this a type that adjusts its
+         * size to enclose its content - and as far as I can see,
+         * it can't do it either. The size it appears at is the
+         * size it keeps.
+         */
+        width: 300 //lw_width + 20
+        height: lw_height + 20
 
-		// update values in dialog
-		if (lunaDialogLoader.source != "")
-			lunaDialogLoader.item.update();
-	}
-
-	function configChanged() {
-		if (plasmoid.formFactor != Horizontal
-		    && plasmoid.formFactor != Vertical
-		    && plasmoid.readConfig("showBackground") == true)
-			plasmoid.setBackgroundHints(DefaultBackground);
-		else
-			plasmoid.setBackgroundHints(NoBackground);
-	}
-
-	LunaIcon {
-		id: lunaIcon
-		anchors.fill: parent
-	}
-
-	PlasmaCore.ToolTip {
-		id: lunaToolTip
-		target: main
-		mainText: i18n("Luna")
-	}
-
-	MouseArea {
-		id: toggleDialogHandler
-		anchors.fill: main
-		onClicked: {
-			if (lunaDialogLoader.source == "")
-				lunaDialogLoader.source = Qt.resolvedUrl("LunaDialog.qml");
-			lunaDialogLoader.item.toggleShown(main);
-		}
-	}
-
-	Loader {
-		id: lunaDialogLoader
-	}
+        property int dateFormat: main.dateFormat
+        property string dateFormatString: main.dateFormatString
+        
+        //onLw_widthChanged: width = lw_width //console.log("It changed! " + lw_width.toString())
+        
+        onDateFormatChanged: {
+            lunaWidget.dateFormat = dateFormat;
+        }
+        
+        onDateFormatStringChanged: {
+            lunaWidget.dateFormatString = dateFormatString;
+        }
+        
+        LunaWidget {
+            id: lunaWidget
+            dateFormat: dateFormat
+            dateFormatString: dateFormatString
+        }
+    }
 }

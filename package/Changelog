@@ -1,3 +1,5 @@
+version 2.0 (2016-12-01)
+- modified to be a Plasma 5 plasmoid
 version 1.4 (2013-05-16):
 - the dialog now scrolls in and out instead of just appearing or disappearing
   when the plasmoid is added in a panel
