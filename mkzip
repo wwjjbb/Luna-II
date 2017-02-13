@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd package
+zip -r ../Luna-II-ver.zip *
+cd ..
