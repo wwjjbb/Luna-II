@@ -17,20 +17,20 @@
 
 import QtQuick 2.1
 import QtQuick.Controls 1.2 as QtControls
-import QtQuick.Layouts 1.3 as QtLayouts
+import QtQuick.Layouts 1.2 as QtLayouts
 
 Item {
     id: generalPage
-    
+
     property alias cfg_hemisphere: hemisphere.currentIndex  // 0=North 1=South
     property alias cfg_showBackground: showBackground.checked  // boolean
-    property alias cfg_dateFormat: dateFormat.currentIndex // code: 0= 1= 2=... 
+    property alias cfg_dateFormat: dateFormat.currentIndex // code: 0= 1= 2=...
     property alias cfg_dateFormatString: dateFormatString.text
-    
+
     QtLayouts.GridLayout {
         columns: 2
         rowSpacing: 15
-        
+
         QtControls.Label {
             text: i18n("Hemisphere")
         }
@@ -42,7 +42,7 @@ Item {
                 ListElement { key : "Southern"; value: 1 }
             }
         }
-            
+
         QtControls.Label {
             text: i18n("Date Format")
         }
@@ -57,7 +57,7 @@ Item {
                 ListElement { key: "Custom"; value: 4 }
             }
         }
-        
+
         QtControls.Label {
             text: i18n("Date Format String")
             visible: dateFormat.currentIndex == 4
