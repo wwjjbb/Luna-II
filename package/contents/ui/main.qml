@@ -47,24 +47,9 @@ Item {
     Plasmoid.backgroundHints: showBackground ? "DefaultBackground" : "NoBackground"
     Plasmoid.preferredRepresentation: Plasmoid.compactRepresentation
 
-    Plasmoid.toolTipItem: Item {
-        width: 160
-        height: 50
-        QtLayouts.ColumnLayout {
-            spacing: 15
-            anchors.horizontalCenter: parent.horizontalCenter
-            QtControls.Label {
-                text: currentPhase.text
-                font.bold: true
-                font.pixelSize: 15
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-            QtControls.Label {
-                text: currentPhase.subText
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-        }
-    }
+    Plasmoid.icon: ""
+    Plasmoid.toolTipMainText: currentPhase.text
+    Plasmoid.toolTipSubText: currentPhase.subText
 
     Plasmoid.compactRepresentation: Item {
         id: compact
