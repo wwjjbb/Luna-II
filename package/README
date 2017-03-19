@@ -12,27 +12,26 @@ This plasmoid is a port to Plasma 5 of Luna QML 1.4 (https://store.kde.org/p/100
 Installation
 ------------
 
-A. Run the following in the main directory ("package") of the project:
+A. Command line, installs to ~/local/share/plasma/plasmoids
 
-Local install (~/.local/share/plasma/plasmoids)
-  $ plasmapkg2 -i .
-  
-Global installation (/usr/local/share/plasma/plasmoids)
-  # plasmapkg2 -g -i .
-  
-To uninstall:
+   This works the same way as loading a new widget from "Add Widgets..."
 
-Local:
-  $ plasmapkg2 -r org.kde.userbase.plasma.luna-ii
+   Install:    $ plasmapkg2 -i package
 
-Global:
-  # plasmapkg2 -g -r org.kde.userbase.plasma.luna-ii
-  
-B. Use CMake
+   Uninstall:  $ plasmapkg2 -r org.kde.userbase.plasma.luna-ii
 
-  1. Unpack to directory luna-ii-plasmoid
-  2. Create an empty directory, luna-ii-plasmoid-build,  and cd into it
-  2. Run: # cmake ../luna-ii-plasmoid
+B. Command line, installs to /usr/local/share/plasma/plasmoids
+
+  Install:     # plasmapkg2 -g -i package
+
+  Uninstall:   # plasmapkg2 -g -r org.kde.userbase.plasma.luna-ii
+
+C. CMake, installs to /usr/local/share/plasma/plasmoids
+
+  1. Find the source directory, contains the CMakeLists.txt file
+  2. Create an empty directory, luna-ii-plasmoid-build, and cd into it
+  3. Run: # cmake <path to source dir>
+  4. Run: # make install
 
 Custom Date Formats
 -------------------
@@ -64,7 +63,7 @@ In addition the following expressions can be used to specify the time:
 License
 -------
 
-Copyright 2016 Bill Binder <dxtwjb@gmail.com>
+Copyright 2016, 2017 Bill Binder <dxtwjb@gmail.com>
 
 Updated the Luna QML plasmoid from Plasma 4 to Plasma 5.
 
