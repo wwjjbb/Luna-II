@@ -89,7 +89,7 @@ Item {
 
     }
 
-    Plasmoid.fullRepresentation: Rectangle {
+    Plasmoid.fullRepresentation: Item {
         id: full
 
         property alias lw_width: lunaWidget.width

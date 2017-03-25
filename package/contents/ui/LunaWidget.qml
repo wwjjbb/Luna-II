@@ -26,7 +26,7 @@ import org.kde.plasma.plasmoid 2.0
 import "../code/phases.js" as Phases
 import "../code/lunacalc.js" as LunaCalc
 
-Rectangle {
+Item {
     id: lunaWidget
     anchors.centerIn: parent
 
@@ -35,24 +35,24 @@ Rectangle {
     property int dateFormat: 0
     property var dateFormatQt: 0
     property string dateFormatString: "hh"
-    
+
     width: labelButtonColumn.width + 20
     height: labelButtonColumn.height + 20
-    
+
     Component.onCompleted: {
         setDateFormat();
         showTodayPhases();
     }
-    
+
     onDateFormatChanged: setDateFormat()
-    
+
     onDateFormatStringChanged: setDateFormat()
 
     Keys.onUpPressed: showPreviousPhases()
     Keys.onLeftPressed: showPreviousPhases()
     Keys.onRightPressed: showNextPhases()
     Keys.onDownPressed: showNextPhases()
-    
+
     Keys.onPressed: {
         if (event.key == Qt.Key_Home)
             showTodayPhases();
@@ -100,13 +100,13 @@ Rectangle {
 
     Column {
         id: labelButtonColumn
-        
+
         anchors.top: lunaWidget.top
         anchors.topMargin: 10
         anchors.horizontalCenter: lunaWidget.horizontalCenter
-        
+
         spacing: 10
-        
+
         Grid {
             id: labelArea
             columns: 2
