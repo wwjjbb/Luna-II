@@ -36,7 +36,11 @@ Item {
 
     PlasmaCore.SvgItem {
         id: lunaSvgItem
-        anchors.fill: parent
+
+        anchors.centerIn: parent
+        width: Math.min(parent.width,parent.height)
+        height: Math.min(parent.width,parent.height)
+
         svg: lunaSvg
 
         // deal with northern <-> southern hemisphere
