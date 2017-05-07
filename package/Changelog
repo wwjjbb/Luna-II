@@ -1,3 +1,7 @@
+version 2.1-beta (2017-05-07)
+- changed the image (edit LunaIcon.qml to use the old one)
+- draws the phase shadow on a full moon image instead of an image per day
+- maintains circular aspect when resized
 version 2.0.3 (2017-03-26)
 - stop trampling over theme
 - fix tooltips for >=Qt5.5
