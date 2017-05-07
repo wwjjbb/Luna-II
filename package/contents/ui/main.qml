@@ -1,7 +1,6 @@
 /**
 
-    Copyright 2016 Bill Binder <dxtwjb@gmail.com>
-    Updated the Luna QML plasmoid from Plasma 4 to Plasma 5.
+    Copyright 2016,2017 Bill Binder <dxtwjb@gmail.com>
     Copyright (C) 2011, 2012, 2013 Glad Deschrijver <glad.deschrijver@gmail.com>
 
     This program is free software; you can redistribute it and/or modify
@@ -64,7 +63,8 @@ Item {
         function updateDetails() {
             // set the correct image for the moon
             currentPhase = LunaCalc.getCurrentPhase();
-            lunaIcon.phaseNumber = currentPhase.number;
+            lunaIcon.phaseNumber = 13; //currentPhase.number;
+            lunaIcon.theta = currentPhase.terminator;
             lunaIcon.hemisphere = hemisphere;
         }
 
