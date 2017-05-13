@@ -58,8 +58,15 @@ Item {
         id: shadow
         width: lunaSvgItem.width
         height: lunaSvgItem.height
+        property int hemisphere: lunaIcon.hemisphere
+        property int theta: lunaIcon.theta
+
         anchors.centerIn: parent
         contextType: "2d"
+
+        onHemisphereChanged: requestPaint()
+
+        onThetaChanged: requestPaint()
 
         onPaint:
         {
@@ -67,15 +74,17 @@ Item {
             context.globalAlpha = 0.9
             context.fillStyle = '#000000'
 
-            var ct = Math.cos(lunaIcon.theta/180*Math.PI)
+            var localtheta = (hemisphere==0) ? theta : (360 - theta)
+
+            var ct = Math.cos(localtheta/180*Math.PI)
             var radius = ShadowCalcs.setup(Math.floor(shadow.height/2))
 
             var cn = Math.floor(shadow.width/2)
 
             // These two determine which side of the centre meridan to draw
             // the two arcs enclosing the shadow area.
-            var terminator = (lunaIcon.theta <= 180) ? 1 : -1
-            var edge = (lunaIcon.theta <= 180) ? -1 : 1
+            var terminator = (localtheta <= 180) ? 1 : -1
+            var edge = (localtheta <= 180) ? -1 : 1
 
             context.beginPath()
             context.moveTo(ShadowCalcs.get(-radius) + cn, -radius + cn)
@@ -89,7 +98,6 @@ Item {
 
             context.closePath()
             context.fill()
-
         }
     }
 }
