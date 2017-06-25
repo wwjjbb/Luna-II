@@ -43,6 +43,10 @@ Item {
     property int dateFormat: Plasmoid.configuration.dateFormat
     property string dateFormatString: Plasmoid.configuration.dateFormatString
 
+    property int lunarIndex: Plasmoid.configuration.lunarIndex
+    property string lunarImage: ''
+    property int lunarImageTweak: 0
+
     Plasmoid.backgroundHints: showBackground ? "DefaultBackground" : "NoBackground"
     Plasmoid.preferredRepresentation: Plasmoid.compactRepresentation
 
@@ -55,10 +59,13 @@ Item {
 
         property int hemisphere: main.hemisphere
         property bool showBackground: main.showBackground
+        property int lunarIndex: main.lunarIndex
 
         Component.onCompleted: updateDetails()
 
         onHemisphereChanged: updateDetails()
+
+        onLunarIndexChanged: updateDetails()
 
         function updateDetails() {
             // set the correct image for the moon
@@ -66,6 +73,13 @@ Item {
             lunaIcon.phaseNumber = 13; //currentPhase.number;
             lunaIcon.theta = currentPhase.terminator;
             lunaIcon.hemisphere = hemisphere;
+
+            main.lunarImage = imageChoices.get(main.lunarIndex).filename
+            main.lunarImageTweak = imageChoices.get(main.lunarIndex).tweak
+        }
+
+        ImageChoices {
+          id: imageChoices
         }
 
         Timer {
@@ -79,6 +93,8 @@ Item {
         LunaIcon {
             id: lunaIcon
             hemisphere: hemisphere
+            lunarImage: main.lunarImage
+            lunarImageTweak: main.lunarImageTweak
             anchors.fill: parent
 
             MouseArea {
@@ -110,8 +126,6 @@ Item {
 
         property int dateFormat: main.dateFormat
         property string dateFormatString: main.dateFormatString
-
-        //onLw_widthChanged: width = lw_width //console.log("It changed! " + lw_width.toString())
 
         onDateFormatChanged: {
             lunaWidget.dateFormat = dateFormat;

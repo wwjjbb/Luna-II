@@ -29,15 +29,16 @@ Item {
 
     property int phaseNumber: 0
     property int hemisphere: 0
+    property bool showShadow: true
+    property string lunarImage: ''
+    property int lunarImageTweak: 0
 
     // Degrees. 0= new moon, 90= first quarter, 180= full moon, 270= third quarter
     property int theta: 45
 
     PlasmaCore.Svg {
         id: lunaSvg
-        imagePath: plasmoid.file("data", "fife-moon.svg");
-        //If you want the old image, enable this line instead ...
-        //imagePath: plasmoid.file("data", "luna-gskbyte13.svg");
+        imagePath: plasmoid.file("data", lunarImage);
     }
 
     PlasmaCore.SvgItem {
@@ -51,7 +52,7 @@ Item {
 
         // deal with northern <-> southern hemisphere
         transformOrigin: Item.Center
-        rotation: hemisphere == 0 ? 0 : 180
+        rotation: (hemisphere == 0 ? 0 : 180) - lunarImageTweak
     }
 
     Canvas {
@@ -60,6 +61,7 @@ Item {
         height: lunaSvgItem.height
         property int hemisphere: lunaIcon.hemisphere
         property int theta: lunaIcon.theta
+        property bool showShadow: lunaIcon.showShadow
 
         anchors.centerIn: parent
         contextType: "2d"
@@ -74,30 +76,83 @@ Item {
             context.globalAlpha = 0.9
             context.fillStyle = '#000000'
 
-            var localtheta = (hemisphere==0) ? theta : (360 - theta)
+            function radians(deg) {
+                return deg / 180.0 * Math.PI;
+            }
 
-            var ct = Math.cos(localtheta/180*Math.PI)
+            function marker(latitude,longitude) {
+              var dy = radius * Math.sin(radians(latitude))
+              var dx = radius * Math.cos(radians(latitude)) * Math.sin(radians(longitude))
+              //console.log("dx: " + dx.toString())
+              //console.log("dy: " + dy.toString())
+              context.beginPath()
+              context.strokeStyle = "#FF0000"
+              context.arc(dx,-dy,5,0,2*Math.PI)
+              context.moveTo(dx-5, -dy-5)
+              context.lineTo(dx+5, -dy+5)
+              context.moveTo(dx-5, -dy+5)
+              context.lineTo(dx+5, -dy-5)
+              context.stroke()
+            }
+
+            function grid() {
+
+              context.beginPath()
+              context.strokeStyle = "#FF4040"
+              context.moveTo(0,-radius)
+              context.lineTo(0,radius)
+              context.moveTo(-radius,0)
+              context.lineTo(radius,0)
+              context.stroke()
+
+              context.beginPath()
+              context.strokeStyle = "#40FF40"
+              for (var ll=10;ll<65;ll+=10) {
+                var dy = radius * Math.sin(radians(ll))
+                context.moveTo(-radius,dy)
+                context.lineTo(radius,dy)
+                context.moveTo(-radius,-dy)
+                context.lineTo(radius,-dy)
+              }
+              context.stroke()
+            }
+
+            console.log("Angle: " + theta.toString())
+
+            var ct = Math.cos(theta/180*Math.PI)
             var radius = ShadowCalcs.setup(Math.floor(shadow.height/2))
 
-            var cn = Math.floor(shadow.width/2)
+            //console.log("radius: " + radius.toString())
+
+            context.translate(radius,radius)
+            if (hemisphere>0)
+              context.rotate(Math.PI)
 
             // These two determine which side of the centre meridan to draw
             // the two arcs enclosing the shadow area.
-            var terminator = (localtheta <= 180) ? 1 : -1
-            var edge = (localtheta <= 180) ? -1 : 1
+            var terminator = (theta <= 180) ? 1 : -1
+            var edge = (theta <= 180) ? -1 : 1
 
-            context.beginPath()
-            context.moveTo(ShadowCalcs.get(-radius) + cn, -radius + cn)
-            for (var z = -radius+1; z <= radius; z++ ) {
-                context.lineTo(terminator*ShadowCalcs.get(z)*ct + cn, z+cn)
+            if (showShadow) {
+              context.beginPath()
+              context.moveTo(ShadowCalcs.get(-radius), -radius)
+              for (var z = -radius+1; z <= radius; z++ ) {
+                  context.lineTo(terminator*ShadowCalcs.get(z)*ct, z)
+              }
+
+              for (z = radius-1; z >= -radius+1; --z) {
+                context.lineTo(edge*ShadowCalcs.get(z), z)
+              }
+
+              context.closePath()
+              context.fill()
             }
-
-            for (z = radius-1; z >= -radius+1; --z) {
-              context.lineTo(edge*ShadowCalcs.get(z) + cn, z+cn)
+            else {
+              // Callibration markers
+              grid()
+              marker(-43,-11.5)  // Tycho
+              marker(9.6,-20)    // Copernicus
             }
-
-            context.closePath()
-            context.fill()
         }
     }
 }

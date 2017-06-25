@@ -6,31 +6,19 @@
   <kcfgfile name=""/>
 
   <group name="General">
-    <entry name="hemisphere" type="Enum">
-      <label>Show in hemisphere</label>
+    <entry name="hemisphere" type="int">
       <default>0</default>
-      <choices>
-        <choice name="Northern"/>
-        <choice name="Southern"/>
-      </choices>
     </entry>
     <entry name="showBackground" type="Bool">
-      <label>Show background</label>
       <default>false</default>
     </entry>
-    <entry name="dateFormat" type="Enum">
-      <label>Date format</label>
+    <entry name="dateFormat" type="int">
       <default>3</default>
-      <choices>
-        <choice name="Text date"/>
-        <choice name="Short date"/>
-        <choice name="Long date"/>
-        <choice name="ISO date"/>
-        <choice name="Custom"/>
-      </choices>
     </entry>
     <entry name="dateFormatString" type="String">
-      <label>Date format string</label>
+    </entry>
+    <entry name="lunarIndex" type="int">
+      <default>1</default>
     </entry>
   </group>
 

@@ -27,9 +27,26 @@ Item {
     property alias cfg_dateFormat: dateFormat.currentIndex // code: 0= 1= 2=...
     property alias cfg_dateFormatString: dateFormatString.text
 
+    property alias cfg_lunarIndex: lunarImageSelection.currentIndex
+    property alias cfg_lunarImage: lunarImageSelection.filename // filename
+    property alias cfg_lunarImageTweak: lunarImageSelection.tweak // rotation angle adjustment for the image
+
     QtLayouts.GridLayout {
         columns: 2
         rowSpacing: 15
+
+        QtControls.Label {
+          text: i18n("Preview")
+        }
+        LunaIcon {
+          id: lunaPreview
+          width: 200
+          height: 200
+          hemisphere: cfg_hemisphere
+          showShadow: false
+          lunarImage: cfg_lunarImage
+          lunarImageTweak: cfg_lunarImageTweak
+        }
 
         QtControls.Label {
             text: i18n("Hemisphere")
@@ -38,7 +55,7 @@ Item {
             id: hemisphere
             textRole: "key"
             model: ListModel {
-            ListElement { key : "Northern"; value: 0 }
+                ListElement { key : "Northern"; value: 0 }
                 ListElement { key : "Southern"; value: 1 }
             }
         }
@@ -67,6 +84,7 @@ Item {
             maximumLength: 24
             visible: dateFormat.currentIndex == 4
         }
+
         QtControls.CheckBox {
             id: showBackground
             text: i18n("Show background")
@@ -74,6 +92,29 @@ Item {
         QtControls.Label {
             text: ""
         }
+
+        QtControls.Label {
+            text: i18n("Lunar Image")
+        }
+        QtLayouts.RowLayout {
+            QtControls.ComboBox {
+                id: lunarImageSelection
+
+                property string filename
+                property int tweak
+
+                textRole: "key"
+                model: ImageChoices {
+                  id: imageChoices
+                }
+                onCurrentIndexChanged: {
+                  filename = imageChoices.get(currentIndex).filename
+                  tweak = imageChoices.get(currentIndex).tweak
+                }
+            }
+        }
+
+
 
     }
 }

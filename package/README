@@ -73,14 +73,14 @@ in the KDE Plasma Workspace. This C++ code is licensed as follows:
   Copyright 2008 by Davide Bettio <davide.bettio@kdemail.net>
   licensed under the GNU GPL version 2 or later.
 
-The luna image (gskbyte13.svg) was extracted from the luna SVG file created by:
+The luna image, gskbyte13.svg, was extracted from the luna SVG file created by:
   Copyright 2009 Jose Alcala (project manager), Dan Gerhards (moon artwork),
                  Jeremy M. Todaro (shadows and layout)
   (available at http://kde-look.org/content/show.php/luna.svgz+(full+SVG+image)?content=106013
   original available at http://www.public-domain-photos.com/free-cliparts/science/astronomy/the_moon_dan_gerhards_01-5094.htm)
   released in the public domain
 
-The luna image (fife-moon) was generated from a photo taken by Bill Binder.
+The luna images, fife-moon & full-moon-dark, were generated from a photo by Bill Binder.
 Released 2017 under Creative Commons Attribution-ShareAlike 3.0
 (http://creativecommons.org/licenses/by-sa/3.0/)
 
