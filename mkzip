@@ -1,5 +1,8 @@
 #!/bin/bash
 
+METADATA="package/metadata.desktop"
+VERSION=$(grep "X-KDE-PluginInfo-Version" $METADATA | sed 's/.*=//')
+
 cd package
-zip -r ../Luna-II-ver.zip *
+zip -r ../Luna-II-${VERSION}.plasmoid *
 cd ..

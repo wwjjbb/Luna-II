@@ -1,4 +1,5 @@
 *.zip
+*.plasmoid
 /build/
 /*.kdev4
 *~
