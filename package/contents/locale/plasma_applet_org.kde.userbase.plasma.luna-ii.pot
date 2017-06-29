@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
+"POT-Creation-Date: 2017-06-27 23:56+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: code/lunacalc.js:128
+msgid "First Quarter"
+msgstr ""
+
+#: code/lunacalc.js:132 code/lunacalc.js:146
+msgid "New Moon"
+msgstr ""
+
+#: code/lunacalc.js:134 code/lunacalc.js:136
+msgid "Waxing Crescent"
+msgstr ""
+
+#: code/lunacalc.js:134
+msgid "Yesterday was New Moon"
+msgstr ""
+
+#: code/lunacalc.js:136
+msgid "%1 days since New Moon"
+msgstr ""
+
+#: code/lunacalc.js:142
+msgid "Last Quarter"
+msgstr ""
+
+#: code/lunacalc.js:148 code/lunacalc.js:150
+msgid "Waning Crescent"
+msgstr ""
+
+#: code/lunacalc.js:148
+msgid "Tomorrow is New Moon"
+msgstr ""
+
+#: code/lunacalc.js:150
+msgid "%1 days to New Moon"
+msgstr ""
+
+#: code/lunacalc.js:156
+msgid "Full Moon"
+msgstr ""
+
+#: code/lunacalc.js:158 code/lunacalc.js:160
+msgid "Waxing Gibbous"
+msgstr ""
+
+#: code/lunacalc.js:158
+msgid "Tomorrow is Full Moon"
+msgstr ""
+
+#: code/lunacalc.js:160
+msgid "%1 days to Full Moon"
+msgstr ""
+
+#: code/lunacalc.js:162 code/lunacalc.js:164
+msgid "Waning Gibbous"
+msgstr ""
+
+#: code/lunacalc.js:162
+msgid "Yesterday was Full Moon"
+msgstr ""
+
+#: code/lunacalc.js:164
+msgid "%1 days since Full Moon"
+msgstr ""
+
+#: config/config.qml:24
+msgid "General"
+msgstr ""
+
+#: locale/rc.js:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: locale/rc.js:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: ui/configGeneral.qml:39
+msgid "Preview"
+msgstr ""
+
+#: ui/configGeneral.qml:52
+msgid "Hemisphere"
+msgstr ""
+
+#: ui/configGeneral.qml:64
+msgid "Date Format"
+msgstr ""
+
+#: ui/configGeneral.qml:79
+msgid "Date Format String"
+msgstr ""
+
+#: ui/configGeneral.qml:90
+msgid "Show background"
+msgstr ""
+
+#: ui/configGeneral.qml:97
+msgid "Lunar Image"
+msgstr ""
+
+#: ui/LunaWidget.qml:116
+msgid "Last new:"
+msgstr ""
+
+#: ui/LunaWidget.qml:123
+msgid "First quarter:"
+msgstr ""
+
+#: ui/LunaWidget.qml:130
+msgid "Full moon:"
+msgstr ""
+
+#: ui/LunaWidget.qml:137
+msgid "Third quarter:"
+msgstr ""
+
+#: ui/LunaWidget.qml:144
+msgid "Next new:"
+msgstr ""
