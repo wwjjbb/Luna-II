@@ -1,3 +1,6 @@
+version 2.1-beta2 (2017-06-29)
+- pick lunar image from a list
+- current image shown with callibration grid on config page (Tycho & Copernicus marked)
 version 2.1-beta (2017-05-07)
 - changed the image (edit LunaIcon.qml to use the old one)
 - draws the phase shadow on a full moon image instead of an image per day
