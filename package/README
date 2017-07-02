@@ -118,10 +118,3 @@ Since the average lunation duration is used, this bug will only occasionaly
 appear, if it appears at all.  This can be solved by setting the variable
 lunationDuration to a higher value (with the negative impact that the startup
 of the plasmoid may be slower).
-
-Known limitations
------------------
-
-- The "Long" date format does not display properly if a shorter date format
-  has already been displayed - the dialog does not change width after it
-  has been displayed. Restart sorts it out.

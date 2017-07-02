@@ -92,21 +92,8 @@ Item {
     Plasmoid.fullRepresentation: Item {
         id: full
 
-        property alias lw_width: lunaWidget.width
-        property alias lw_height: lunaWidget.height
-
-        /* I cannot figure out ANY way to change the size of this
-         * object AFTER it has been created. The lw_width value
-         * DOES get changed, it just has no effect on setting this
-         * width value.
-         *
-         * I would settle for making this a type that adjusts its
-         * size to enclose its content - and as far as I can see,
-         * it can't do it either. The size it appears at is the
-         * size it keeps.
-         */
-        width: 300 //lw_width + 20
-        height: lw_height + 20
+        QtLayouts.Layout.preferredWidth: lunaWidget.QtLayouts.Layout.minimumWidth
+        QtLayouts.Layout.preferredHeight: lunaWidget.QtLayouts.Layout.minimumHeight
 
         property int dateFormat: main.dateFormat
         property string dateFormatString: main.dateFormatString
