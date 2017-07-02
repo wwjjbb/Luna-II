@@ -38,8 +38,11 @@ Item {
             id: hemisphere
             textRole: "key"
             model: ListModel {
-            ListElement { key : "Northern"; value: 0 }
-                ListElement { key : "Southern"; value: 1 }
+                dynamicRoles: true
+                Component.onCompleted: {
+                append({key : i18n("Northern"), value: 0 })
+                append({key : i18n("Southern"), value: 1 })
+                }
             }
         }
 
@@ -50,11 +53,14 @@ Item {
             id: dateFormat
             textRole: "key"
             model: ListModel {
-                ListElement { key: "Text date"; value: 0 }
-                ListElement { key: "Short date"; value: 1 }
-                ListElement { key: "Long date"; value: 2 }
-                ListElement { key: "ISO date"; value: 3 }
-                ListElement { key: "Custom"; value: 4 }
+                dynamicRoles: true
+                Component.onCompleted: {
+                append({ key: i18n("Text date"), value: 0 })
+                append({ key: i18n("Short date"), value: 1 })
+                append({ key: i18n("Long date"), value: 2 })
+                append({ key: i18n("ISO date"), value: 3 })
+                append({ key: i18n("Custom"), value: 4 })
+                }
             }
         }
 

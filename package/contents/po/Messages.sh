@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# based on exaple found here:
+# based on example found here:
 #   https://techbase.kde.org/Development/Tutorials/Localization/i18n_Build_Systems
 
 BUGADDR="https://github.com/wwjjbb/Luna-II/issues"	# MSGID-Bugs
@@ -17,9 +17,6 @@ RCSCRIPT="$WDIR/rc.js"
 echo "Preparing rc files"
 
 cd ${BASEDIR}
-# we use simple sorting to make sure the lines do not jump around too much from system to system
-#find . -name '*.qml' -o -name '*.js' | sort > ${WDIR}/rcfiles.list
-#xargs --arg-file=${WDIR}/rcfiles.list extractrc > $RCSCRIPT
 
 # additional string for KAboutData
 echo 'i18nc("NAME OF TRANSLATORS","Your names");' > $RCSCRIPT
@@ -61,7 +58,9 @@ echo "Generating mo files"
 catalogs=$(find . -name '*.po')
 for cat in $catalogs; do
   echo $cat
-  msgfmt $cat -o ${cat%.*}.mo
+	catdir=locale/${cat%.*}/LC_MESSAGES
+	mkdir -p $catdir
+  msgfmt $cat -o $catdir/$PROJECT.mo
 done
 
 echo "Done generating mo files"
@@ -70,7 +69,6 @@ echo "Done generating mo files"
 
 echo "Cleaning up"
 cd ${WDIR}
-rm rcfiles.list
 rm infiles.list
 rm $RCSCRIPT
 
