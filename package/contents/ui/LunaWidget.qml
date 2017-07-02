@@ -20,6 +20,7 @@
 */
 
 import QtQuick 2.1
+import QtQuick.Layouts 1.2 as QtLayouts
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.plasmoid 2.0
 
@@ -36,8 +37,8 @@ Item {
     property var dateFormatQt: 0
     property string dateFormatString: "hh"
 
-    width: labelButtonColumn.width + 20
-    height: labelButtonColumn.height + 20
+    QtLayouts.Layout.minimumWidth: labelButtonColumn.width
+    QtLayouts.Layout.minimumHeight: labelButtonColumn.height
 
     Component.onCompleted: {
         setDateFormat();
@@ -101,9 +102,7 @@ Item {
     Column {
         id: labelButtonColumn
 
-        anchors.top: lunaWidget.top
-        anchors.topMargin: 10
-        anchors.horizontalCenter: lunaWidget.horizontalCenter
+        anchors.centerIn: parent
 
         spacing: 10
 

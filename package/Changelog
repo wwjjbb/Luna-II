@@ -1,5 +1,7 @@
 version 2.1-beta3 (2017-07-02)
 - get localisation working, added missing translations to fr locale.
+- added russian translation (it's not very good)
+- LunaWidget stretches to fit, not fixed size anymore
 version 2.1-beta2 (2017-06-29)
 - pick lunar image from a list
 - current image shown with callibration grid on config page (Tycho & Copernicus marked)
