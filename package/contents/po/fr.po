@@ -1,23 +1,24 @@
 # plasma-applet-luna-qml language translation file.
+# Copyright (C) 2017 Bill Binder
 # Copyright (C) 2011, 2012 Glad Deschrijver
 # This file is distributed under the same license as the plasma-applet-luna-qml package.
 #
 #
+# Bill Binder <dxtwjb@gmail.com>, 2017
 # Glad Deschrijver <glad.deschrijver@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.4\n"
+"Project-Id-Version: 2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
-"POT-Creation-Date: 2017-06-27 23:56+0100\n"
-"PO-Revision-Date: 2012-07-18 10:54+0200\n"
-"Last-Translator: Glad Deschrijver <glad.deschrijver@gmail.com>\n"
-"Language-Team: French <kde-i18n-fr@kde.org>\n"
+"POT-Creation-Date: 2017-07-02 14:16+0100\n"
+"PO-Revision-Date: 2017-07-01 23:54+0100\n"
+"Last-Translator: Bill Binder <dxtwjb@gmail.com>\n"
+"Language-Team: n/a\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.4\n"
 
 #: code/lunacalc.js:128
 msgid "First Quarter"
@@ -85,44 +86,77 @@ msgstr "%1 jours depuis la pleine Lune"
 
 #: config/config.qml:24
 msgid "General"
-msgstr ""
+msgstr "Général"
 
-#: locale/rc.js:1
+#: po/rc.js:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Glad Deschrijver"
+msgstr "Glad Deschrijver, Bill Binder"
 
-#: locale/rc.js:2
+#: po/rc.js:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "glad.deschrijver@gmail.com"
+msgstr "dxtwjb@gmail.com"
 
 #: ui/configGeneral.qml:39
 msgid "Preview"
-msgstr ""
+msgstr "Aperçu de l'image"
 
-#: ui/configGeneral.qml:52
-#, fuzzy
+#: ui/configGeneral.qml:54
+msgid "Previous image"
+msgstr "L'image précédente"
+
+#: ui/configGeneral.qml:61
+msgid "Next image"
+msgstr "L'image suivante"
+
+#: ui/configGeneral.qml:71
 msgid "Hemisphere"
 msgstr "Montrer dans l'hémisphère"
 
-#: ui/configGeneral.qml:64
-#, fuzzy
+#: ui/configGeneral.qml:79
+msgid "Northern"
+msgstr "Nord"
+
+#: ui/configGeneral.qml:80
+msgid "Southern"
+msgstr "Sud"
+
+#: ui/configGeneral.qml:86
 msgid "Date Format"
 msgstr "Format des dates"
 
-#: ui/configGeneral.qml:79
-#, fuzzy
+#: ui/configGeneral.qml:94
+msgid "Text date"
+msgstr "Date textuelle"
+
+#: ui/configGeneral.qml:95
+msgid "Short date"
+msgstr "Date courte"
+
+#: ui/configGeneral.qml:96
+msgid "Long date"
+msgstr "Date longue"
+
+#: ui/configGeneral.qml:97
+msgid "ISO date"
+msgstr "Date de l'ISO"
+
+#: ui/configGeneral.qml:98
+msgid "Custom"
+msgstr "Personnaliser"
+
+#: ui/configGeneral.qml:104
 msgid "Date Format String"
 msgstr "Format des dates personnalisé"
 
-#: ui/configGeneral.qml:90
+#: ui/configGeneral.qml:115
 msgid "Show background"
 msgstr "Montrer arrière-plan"
 
-#: ui/configGeneral.qml:97
+#: ui/configGeneral.qml:123
 msgid "Lunar Image"
-msgstr ""
+msgstr "Image lunaire"
 
 #: ui/LunaWidget.qml:116
 msgid "Last new:"
@@ -144,38 +178,29 @@ msgstr "Dernier quartier :"
 msgid "Next new:"
 msgstr "Nouvelle Lune suivante :"
 
+#~ msgid "Light grey image"
+#~ msgstr "Image gris clair"
+
+#~ msgid "Darker grey image"
+#~ msgstr "Image gris plus foncée"
+
+#~ msgid "Original image"
+#~ msgstr "Image originale"
+
+#~ msgid "Yellow disk"
+#~ msgstr "Disque jaune"
+
 #~ msgid "Luna"
 #~ msgstr "Lune"
 
 #~ msgid "Show moon as seen in:"
 #~ msgstr "Afficher la lune comme vue dans :"
 
-#~ msgid "&Northern hemisphere"
-#~ msgstr "Hémisphère &nord"
-
-#~ msgid "&Southern hemisphere"
-#~ msgstr "Hémisphère &sud"
-
 #~ msgid "Show &background"
 #~ msgstr "Montrer &arrière-plan"
 
 #~ msgid "&Date format:"
 #~ msgstr "Format des &dates :"
-
-#~ msgid "Text date"
-#~ msgstr "Date textuelle"
-
-#~ msgid "Short date"
-#~ msgstr "Date courte"
-
-#~ msgid "Long date"
-#~ msgstr "Date longue"
-
-#~ msgid "ISO date"
-#~ msgstr "Date de l'ISO"
-
-#~ msgid "Custom"
-#~ msgstr "Personnaliser"
 
 #~ msgid ""
 #~ "<p>The date format string entered here will be used if \"Custom\" is "

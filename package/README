@@ -16,22 +16,35 @@ A. Command line, installs to ~/local/share/plasma/plasmoids
 
    This works the same way as loading a new widget from "Add Widgets..."
 
-   Install:    $ plasmapkg2 -i package
+   Install:    $ plasmapkg2 -i Luna-II-<ver>.plasmoid
+
+   Update:     $ plasmapkg2 -u Luna-II-<ver>.plasmoid
 
    Uninstall:  $ plasmapkg2 -r org.kde.userbase.plasma.luna-ii
 
+   See README_TRANSLATIONS.txt (Step 4) for installing localisations.
+
 B. Command line, installs to /usr/local/share/plasma/plasmoids
 
-  Install:     # plasmapkg2 -g -i package
+   Install:   # plasmapkg2 -g -i Luna-II-<ver>.plasmoid
 
-  Uninstall:   # plasmapkg2 -g -r org.kde.userbase.plasma.luna-ii
+   Update:    # plasmapkg2 -g -u Luna-II-<ver>.plasmoid
+
+   Uninstall: # plasmapkg2 -g -r org.kde.userbase.plasma.luna-ii
+
+   See README_TRANSLATIONS.txt (Step 4) for installing localisations.
 
 C. CMake, installs to /usr/local/share/plasma/plasmoids
 
-  1. Find the source directory, contains the CMakeLists.txt file
+   WARNING: this works but is not really maintained.
+
+  0. Unpack Luna-II-<ver>.plasmoid - it's a zip file.
+  1. The top directory contains the CMakeLists.txt file
   2. Create an empty directory, luna-ii-plasmoid-build, and cd into it
   3. Run: # cmake <path to source dir>
   4. Run: # make install
+
+  See README_TRANSLATIONS.txt (Step 4) for installing localisations.
 
 Custom Date Formats
 -------------------

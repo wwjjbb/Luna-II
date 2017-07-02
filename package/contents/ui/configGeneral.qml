@@ -38,14 +38,33 @@ Item {
         QtControls.Label {
           text: i18n("Preview")
         }
-        LunaIcon {
-          id: lunaPreview
-          width: 200
-          height: 200
-          hemisphere: cfg_hemisphere
-          showShadow: false
-          lunarImage: cfg_lunarImage
-          lunarImageTweak: cfg_lunarImageTweak
+        QtLayouts.RowLayout {
+            spacing: 20
+            LunaIcon {
+              id: lunaPreview
+              width: 200
+              height: 200
+              hemisphere: cfg_hemisphere
+              showShadow: false
+              lunarImage: cfg_lunarImage
+              lunarImageTweak: cfg_lunarImageTweak
+            }
+            QtLayouts.ColumnLayout {
+            QtControls.Button {
+              text: i18n("Previous image")
+              enabled: lunarImageSelection.currentIndex > 0
+              onClicked: {
+                lunarImageSelection.currentIndex -= 1
+              }
+            }
+            QtControls.Button {
+              text: i18n("Next image")
+              enabled: lunarImageSelection.currentIndex < lunarImageSelection.count-1
+              onClicked: {
+                lunarImageSelection.currentIndex += 1
+              }
+            }
+          }
         }
 
         QtControls.Label {
@@ -55,8 +74,11 @@ Item {
             id: hemisphere
             textRole: "key"
             model: ListModel {
-                ListElement { key : "Northern"; value: 0 }
-                ListElement { key : "Southern"; value: 1 }
+                dynamicRoles: true
+                Component.onCompleted: {
+                append({key : i18n("Northern"), value: 0 })
+                append({key : i18n("Southern"), value: 1 })
+                }
             }
         }
 
@@ -67,11 +89,14 @@ Item {
             id: dateFormat
             textRole: "key"
             model: ListModel {
-                ListElement { key: "Text date"; value: 0 }
-                ListElement { key: "Short date"; value: 1 }
-                ListElement { key: "Long date"; value: 2 }
-                ListElement { key: "ISO date"; value: 3 }
-                ListElement { key: "Custom"; value: 4 }
+                dynamicRoles: true
+                Component.onCompleted: {
+                append({ key: i18n("Text date"), value: 0 })
+                append({ key: i18n("Short date"), value: 1 })
+                append({ key: i18n("Long date"), value: 2 })
+                append({ key: i18n("ISO date"), value: 3 })
+                append({ key: i18n("Custom"), value: 4 })
+                }
             }
         }
 
@@ -94,9 +119,11 @@ Item {
         }
 
         QtControls.Label {
-            text: i18n("Lunar Image")
+          visible: false
+          text: i18n("Lunar Image")
         }
         QtLayouts.RowLayout {
+            visible: false
             QtControls.ComboBox {
                 id: lunarImageSelection
 
