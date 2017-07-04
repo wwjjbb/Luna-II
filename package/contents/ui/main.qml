@@ -44,6 +44,7 @@ Item {
     property string dateFormatString: Plasmoid.configuration.dateFormatString
 
     property int lunarIndex: Plasmoid.configuration.lunarIndex
+    property string diskColour: Plasmoid.configuration.diskColour
     property string lunarImage: ''
     property int lunarImageTweak: 0
 
@@ -95,6 +96,8 @@ Item {
             hemisphere: hemisphere
             lunarImage: main.lunarImage
             lunarImageTweak: main.lunarImageTweak
+            diskColour: main.diskColour
+
             anchors.fill: parent
 
             MouseArea {

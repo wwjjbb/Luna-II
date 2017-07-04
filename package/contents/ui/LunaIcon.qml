@@ -31,14 +31,19 @@ Item {
     property int hemisphere: 0
     property bool showShadow: true
     property string lunarImage: ''
+    property color diskColour: '#ffffff'
     property int lunarImageTweak: 0
+
+    property bool showGrid: false
+    property bool showTycho: false
+    property bool showCopernicus: false
 
     // Degrees. 0= new moon, 90= first quarter, 180= full moon, 270= third quarter
     property int theta: 45
 
     PlasmaCore.Svg {
         id: lunaSvg
-        imagePath: plasmoid.file("data", lunarImage);
+        imagePath: lunarImage === '' ? '' : plasmoid.file("data", lunarImage)
     }
 
     PlasmaCore.SvgItem {
@@ -62,6 +67,11 @@ Item {
         property int hemisphere: lunaIcon.hemisphere
         property int theta: lunaIcon.theta
         property bool showShadow: lunaIcon.showShadow
+        property string lunarImage: lunaIcon.lunarImage
+        property string diskColour: lunaIcon.diskColour
+        property bool showGrid: lunaIcon.showGrid
+        property bool showTycho: lunaIcon.showTycho
+        property bool showCopernicus: lunaIcon.showCopernicus
 
         anchors.centerIn: parent
         contextType: "2d"
@@ -69,6 +79,14 @@ Item {
         onHemisphereChanged: requestPaint()
 
         onThetaChanged: requestPaint()
+
+        onLunarImageChanged: requestPaint()
+
+        onDiskColourChanged: requestPaint()
+
+        onShowGridChanged: requestPaint()
+        onShowTychoChanged: requestPaint()
+        onShowCopernicusChanged: requestPaint()
 
         onPaint:
         {
@@ -117,7 +135,7 @@ Item {
               context.stroke()
             }
 
-            console.log("Angle: " + theta.toString())
+            //console.log("Angle: " + theta.toString())
 
             var ct = Math.cos(theta/180*Math.PI)
             var radius = ShadowCalcs.setup(Math.floor(shadow.height/2))
@@ -133,10 +151,21 @@ Item {
             var terminator = (theta <= 180) ? 1 : -1
             var edge = (theta <= 180) ? -1 : 1
 
+            var z
+
+            if (lunarImage === '') {
+                context.beginPath()
+                context.fillStyle = diskColour
+                context.arc(0,0,radius,0,2*Math.PI)
+                context.closePath()
+                context.fill()
+            }
+
             if (showShadow) {
               context.beginPath()
+              context.fillStyle = '#000000'
               context.moveTo(ShadowCalcs.get(-radius), -radius)
-              for (var z = -radius+1; z <= radius; z++ ) {
+              for (z = -radius+1; z <= radius; z++ ) {
                   context.lineTo(terminator*ShadowCalcs.get(z)*ct, z)
               }
 
@@ -149,9 +178,14 @@ Item {
             }
             else {
               // Callibration markers
-              grid()
-              marker(-43,-11.5)  // Tycho
-              marker(9.6,-20)    // Copernicus
+              if (showGrid)
+                  grid()
+
+              if (showTycho)
+                  marker(-43,-11.5)  // Tycho
+
+              if (showCopernicus)
+                  marker(9.6,-20)    // Copernicus
             }
         }
     }

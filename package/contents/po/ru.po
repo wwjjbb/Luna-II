@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
-"POT-Creation-Date: 2017-07-02 15:27+0100\n"
+"POT-Creation-Date: 2017-07-05 00:51+0100\n"
 "PO-Revision-Date: 2017-07-01 14:29+0100\n"
 "Last-Translator: Bill Binder <dxtwjb@gmail.com>\n"
 "Language-Team: n/a\n"
@@ -96,82 +96,99 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "dxtwjb@gmail.com"
 
-#: ui/configGeneral.qml:39
+#: ui/configGeneral.qml:53
+msgid "Pick a colour for the moon"
+msgstr "Выберите цвет для луны"
+
+#: ui/configGeneral.qml:66
 msgid "Preview"
 msgstr "Лунное изображение"
 
-#: ui/configGeneral.qml:54
-msgid "Previous image"
-msgstr "Предыдущее изображение"
+#: ui/configGeneral.qml:108
+msgid "Show grid"
+msgstr "Показывать фон"
 
-#: ui/configGeneral.qml:61
-msgid "Next image"
-msgstr "Следующее изображение"
+#: ui/configGeneral.qml:113
+msgid "Tycho"
+msgstr "Тихо"
 
-#: ui/configGeneral.qml:71
+#: ui/configGeneral.qml:118
+msgid "Copernicus"
+msgstr "Коперник"
+
+#: ui/configGeneral.qml:125
+msgid "Disk Colour"
+msgstr "Цвет луны"
+
+#: ui/configGeneral.qml:147
 msgid "Hemisphere"
 msgstr "местоположение"
 
-#: ui/configGeneral.qml:79
+#: ui/configGeneral.qml:156
 msgid "Northern"
 msgstr "Северное полушарие"
 
-#: ui/configGeneral.qml:80
+#: ui/configGeneral.qml:157
 msgid "Southern"
 msgstr "Южное полушарие"
 
-#: ui/configGeneral.qml:86
+#: ui/configGeneral.qml:163
 msgid "Date Format"
 msgstr "Формат даты"
 
-#: ui/configGeneral.qml:94
+#: ui/configGeneral.qml:172
 msgid "Text date"
 msgstr "Дата форматирования текста"
 
-#: ui/configGeneral.qml:95
+#: ui/configGeneral.qml:173
 msgid "Short date"
 msgstr "Краткая дата в формате"
 
-#: ui/configGeneral.qml:96
+#: ui/configGeneral.qml:174
 msgid "Long date"
 msgstr "Длинная форма дата"
 
-#: ui/configGeneral.qml:97
+#: ui/configGeneral.qml:175
 msgid "ISO date"
 msgstr "Дата формата ISO"
 
-#: ui/configGeneral.qml:98
+#: ui/configGeneral.qml:176
 msgid "Custom"
 msgstr "Дата пользовательского формата"
 
-#: ui/configGeneral.qml:104
+#: ui/configGeneral.qml:182
 msgid "Date Format String"
 msgstr "Строка формата даты"
 
-#: ui/configGeneral.qml:115
+#: ui/configGeneral.qml:193
 msgid "Show background"
 msgstr "Показывать фон"
 
-#: ui/configGeneral.qml:123
-msgid "Lunar Image"
-msgstr "Лунное изображение"
-
-#: ui/LunaWidget.qml:116
+#: ui/LunaWidget.qml:115
 msgid "Last new:"
 msgstr "Последняя новолуния:"
 
-#: ui/LunaWidget.qml:123
+#: ui/LunaWidget.qml:122
 msgid "First quarter:"
 msgstr "Первая четверть луны:"
 
-#: ui/LunaWidget.qml:130
+#: ui/LunaWidget.qml:129
 msgid "Full moon:"
 msgstr "Полнолуние:"
 
-#: ui/LunaWidget.qml:137
+#: ui/LunaWidget.qml:136
 msgid "Third quarter:"
 msgstr "Третья четверть луны"
 
-#: ui/LunaWidget.qml:144
+#: ui/LunaWidget.qml:143
 msgid "Next new:"
 msgstr "Следующая новолуние"
+
+#~ msgid "Lunar Image"
+#~ msgstr "Лунное изображение"
+
+#~ msgid "Previous image"
+#~ msgstr "Предыдущее изображение"
+
+#~ msgid "Next image"
+#~ msgstr "Следующее изображение"

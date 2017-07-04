@@ -20,6 +20,9 @@
     <entry name="lunarIndex" type="int">
       <default>1</default>
     </entry>
+    <entry name="diskColour" type="String">
+      <default>#ffff80</default>
+    </entry>
   </group>
 
 </kcfg>

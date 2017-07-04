@@ -18,6 +18,9 @@
 import QtQuick 2.1
 import QtQuick.Controls 1.2 as QtControls
 import QtQuick.Layouts 1.2 as QtLayouts
+import QtQuick.Dialogs 1.0 as QtDialogs
+
+import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Item {
     id: generalPage
@@ -26,20 +29,54 @@ Item {
     property alias cfg_showBackground: showBackground.checked  // boolean
     property alias cfg_dateFormat: dateFormat.currentIndex // code: 0= 1= 2=...
     property alias cfg_dateFormatString: dateFormatString.text
+    property alias cfg_diskColour: diskColour.color
 
-    property alias cfg_lunarIndex: lunarImageSelection.currentIndex
-    property alias cfg_lunarImage: lunarImageSelection.filename // filename
-    property alias cfg_lunarImageTweak: lunarImageSelection.tweak // rotation angle adjustment for the image
+    property int cfg_lunarIndex: 0        // index into imageChoices
+    property string cfg_lunarImage: ''    // filename (from imageChoices)
+    property int cfg_lunarImageTweak: 0   // rotation angle adjustment for the image (from imageChoices)
+
+    property alias cfg_showGrid: showGrid.checked
+    property alias cfg_showTycho: showTycho.checked
+    property alias cfg_showCopernicus: showCopernicus.checked
+
+    onCfg_lunarIndexChanged: {
+        cfg_lunarImage = imageChoices.get(cfg_lunarIndex).filename
+        cfg_lunarImageTweak = imageChoices.get(cfg_lunarIndex).tweak
+      }
+
+    ImageChoices {
+        id: imageChoices
+    }
+
+    QtDialogs.ColorDialog {
+        id: colorDialog
+        title: i18n("Pick a colour for the moon")
+        visible: false
+
+        onAccepted: {
+            diskColour.color = colorDialog.color
+        }
+    }
 
     QtLayouts.GridLayout {
         columns: 2
         rowSpacing: 15
 
         QtControls.Label {
-          text: i18n("Preview")
+            text: i18n("Preview")
         }
         QtLayouts.RowLayout {
             spacing: 20
+
+            PlasmaComponents.ToolButton {
+                id: previousButton
+                iconSource: "go-previous"
+                enabled: cfg_lunarIndex > 0
+                onClicked: {
+                    cfg_lunarIndex -= 1
+                }
+            }
+
             LunaIcon {
               id: lunaPreview
               width: 200
@@ -48,23 +85,62 @@ Item {
               showShadow: false
               lunarImage: cfg_lunarImage
               lunarImageTweak: cfg_lunarImageTweak
+              diskColour: cfg_diskColour
+              showGrid: cfg_showGrid
+              showTycho: cfg_showTycho
+              showCopernicus: cfg_showCopernicus
             }
+
+            PlasmaComponents.ToolButton {
+                id: nextButton
+                iconSource: "go-next"
+                enabled: cfg_lunarIndex < imageChoices.count-1
+                onClicked: {
+                    cfg_lunarIndex += 1
+                }
+            }
+
             QtLayouts.ColumnLayout {
-            QtControls.Button {
-              text: i18n("Previous image")
-              enabled: lunarImageSelection.currentIndex > 0
-              onClicked: {
-                lunarImageSelection.currentIndex -= 1
-              }
+                spacing: 20
+
+                QtControls.CheckBox {
+                    id: showGrid
+                    text: i18n("Show grid")
+                }
+
+                QtControls.CheckBox {
+                    id: showTycho
+                    text: i18n("Tycho")
+                }
+
+                QtControls.CheckBox {
+                    id: showCopernicus
+                    text: i18n("Copernicus")
+                }
+
             }
-            QtControls.Button {
-              text: i18n("Next image")
-              enabled: lunarImageSelection.currentIndex < lunarImageSelection.count-1
-              onClicked: {
-                lunarImageSelection.currentIndex += 1
-              }
+        }
+
+        QtControls.Label {
+            text: i18n("Disk Colour")
+            visible: cfg_lunarImage === ""
+        }
+        Rectangle {
+            id: diskColour
+            width: 50
+            height: 50
+            color: '#808040'
+            border.color: '#000000'
+            radius: height/2
+            visible: cfg_lunarImage === ""
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    colorDialog.color = diskColour.color
+                    colorDialog.visible = true
+                }
             }
-          }
         }
 
         QtControls.Label {
@@ -72,6 +148,7 @@ Item {
         }
         QtControls.ComboBox {
             id: hemisphere
+            QtLayouts.Layout.fillWidth: true
             textRole: "key"
             model: ListModel {
                 dynamicRoles: true
@@ -87,6 +164,7 @@ Item {
         }
         QtControls.ComboBox {
             id: dateFormat
+            QtLayouts.Layout.fillWidth: true
             textRole: "key"
             model: ListModel {
                 dynamicRoles: true
@@ -117,31 +195,6 @@ Item {
         QtControls.Label {
             text: ""
         }
-
-        QtControls.Label {
-          visible: false
-          text: i18n("Lunar Image")
-        }
-        QtLayouts.RowLayout {
-            visible: false
-            QtControls.ComboBox {
-                id: lunarImageSelection
-
-                property string filename
-                property int tweak
-
-                textRole: "key"
-                model: ImageChoices {
-                  id: imageChoices
-                }
-                onCurrentIndexChanged: {
-                  filename = imageChoices.get(currentIndex).filename
-                  tweak = imageChoices.get(currentIndex).tweak
-                }
-            }
-        }
-
-
 
     }
 }
