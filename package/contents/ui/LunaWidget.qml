@@ -19,7 +19,7 @@
 
 */
 
-import QtQuick 2.1
+import QtQuick 2.7
 import QtQuick.Layouts 1.2 as QtLayouts
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.plasmoid 2.0
@@ -109,6 +109,7 @@ Item {
         Grid {
             id: labelArea
             columns: 2
+            padding: 10
             flow: Grid.LeftToRight
             PlasmaComponents.Label {
                 id: lastNewLabel

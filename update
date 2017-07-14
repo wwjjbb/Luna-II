@@ -1,5 +1,8 @@
 #!/bin/bash
 
+METADATA="package/metadata.desktop"
+APPNAME=$(grep "X-KDE-PluginInfo-Name" $METADATA | sed 's/.*=//')
+
 if [[ $1 == --install ]]; then
     plasmapkg2 --install package
 else
@@ -10,4 +13,4 @@ echo
 echo '------------------------------------------------'
 echo
 
-plasmoidviewer -a org.kde.userbase.plasma.luna-ii
+plasmoidviewer -a $APPNAME
