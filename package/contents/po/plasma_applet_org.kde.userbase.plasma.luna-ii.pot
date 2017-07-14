@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
-"POT-Creation-Date: 2017-07-05 00:51+0100\n"
+"POT-Creation-Date: 2017-07-14 15:33+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,67 +17,67 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: code/lunacalc.js:128
+#: code/lunacalc.js:129
 msgid "First Quarter"
 msgstr ""
 
-#: code/lunacalc.js:132 code/lunacalc.js:146
+#: code/lunacalc.js:133 code/lunacalc.js:147
 msgid "New Moon"
 msgstr ""
 
-#: code/lunacalc.js:134 code/lunacalc.js:136
+#: code/lunacalc.js:135 code/lunacalc.js:137
 msgid "Waxing Crescent"
 msgstr ""
 
-#: code/lunacalc.js:134
+#: code/lunacalc.js:135
 msgid "Yesterday was New Moon"
 msgstr ""
 
-#: code/lunacalc.js:136
+#: code/lunacalc.js:137
 msgid "%1 days since New Moon"
 msgstr ""
 
-#: code/lunacalc.js:142
+#: code/lunacalc.js:143
 msgid "Last Quarter"
 msgstr ""
 
-#: code/lunacalc.js:148 code/lunacalc.js:150
+#: code/lunacalc.js:149 code/lunacalc.js:151
 msgid "Waning Crescent"
 msgstr ""
 
-#: code/lunacalc.js:148
+#: code/lunacalc.js:149
 msgid "Tomorrow is New Moon"
 msgstr ""
 
-#: code/lunacalc.js:150
+#: code/lunacalc.js:151
 msgid "%1 days to New Moon"
 msgstr ""
 
-#: code/lunacalc.js:156
+#: code/lunacalc.js:157
 msgid "Full Moon"
 msgstr ""
 
-#: code/lunacalc.js:158 code/lunacalc.js:160
+#: code/lunacalc.js:159 code/lunacalc.js:161
 msgid "Waxing Gibbous"
 msgstr ""
 
-#: code/lunacalc.js:158
+#: code/lunacalc.js:159
 msgid "Tomorrow is Full Moon"
 msgstr ""
 
-#: code/lunacalc.js:160
+#: code/lunacalc.js:161
 msgid "%1 days to Full Moon"
 msgstr ""
 
-#: code/lunacalc.js:162 code/lunacalc.js:164
+#: code/lunacalc.js:163 code/lunacalc.js:165
 msgid "Waning Gibbous"
 msgstr ""
 
-#: code/lunacalc.js:162
+#: code/lunacalc.js:163
 msgid "Yesterday was Full Moon"
 msgstr ""
 
-#: code/lunacalc.js:164
+#: code/lunacalc.js:165
 msgid "%1 days since Full Moon"
 msgstr ""
 
@@ -163,22 +163,22 @@ msgstr ""
 msgid "Show background"
 msgstr ""
 
-#: ui/LunaWidget.qml:115
+#: ui/LunaWidget.qml:116
 msgid "Last new:"
 msgstr ""
 
-#: ui/LunaWidget.qml:122
+#: ui/LunaWidget.qml:123
 msgid "First quarter:"
 msgstr ""
 
-#: ui/LunaWidget.qml:129
+#: ui/LunaWidget.qml:130
 msgid "Full moon:"
 msgstr ""
 
-#: ui/LunaWidget.qml:136
+#: ui/LunaWidget.qml:137
 msgid "Third quarter:"
 msgstr ""
 
-#: ui/LunaWidget.qml:143
+#: ui/LunaWidget.qml:144
 msgid "Next new:"
 msgstr ""

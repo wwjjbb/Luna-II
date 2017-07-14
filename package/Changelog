@@ -1,7 +1,10 @@
 version 2.1-beta3 (2017-07-02)
-- get localisation working, added missing translations to fr locale.
-- added russian translation (it's not very good)
+- got localisation working, fr & ru for starters, need help
 - LunaWidget stretches to fit, not fixed size anymore
+- replaced the yellow moon disk with one where the colour can be picked
+- added a custom.svg image - replace this with whatever image you want
+- make calibration marks optional on the config moon image
+- the image matches at the quarters now, was out due to assuming constant rate
 version 2.1-beta2 (2017-06-29)
 - pick lunar image from a list
 - current image shown with callibration grid on config page (Tycho & Copernicus marked)

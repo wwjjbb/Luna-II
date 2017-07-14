@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
-"POT-Creation-Date: 2017-07-05 00:51+0100\n"
+"POT-Creation-Date: 2017-07-14 15:33+0100\n"
 "PO-Revision-Date: 2017-07-01 14:29+0100\n"
 "Last-Translator: Bill Binder <dxtwjb@gmail.com>\n"
 "Language-Team: n/a\n"
@@ -18,67 +18,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: code/lunacalc.js:128
+#: code/lunacalc.js:129
 msgid "First Quarter"
 msgstr "Первая четверть"
 
-#: code/lunacalc.js:132 code/lunacalc.js:146
+#: code/lunacalc.js:133 code/lunacalc.js:147
 msgid "New Moon"
 msgstr "Новолуние"
 
-#: code/lunacalc.js:134 code/lunacalc.js:136
+#: code/lunacalc.js:135 code/lunacalc.js:137
 msgid "Waxing Crescent"
 msgstr "Молодая луна"
 
-#: code/lunacalc.js:134
+#: code/lunacalc.js:135
 msgid "Yesterday was New Moon"
 msgstr "Вчера была Новолуние"
 
-#: code/lunacalc.js:136
+#: code/lunacalc.js:137
 msgid "%1 days since New Moon"
 msgstr "%1 дня с новой луны"
 
-#: code/lunacalc.js:142
+#: code/lunacalc.js:143
 msgid "Last Quarter"
 msgstr "Последняя четверть"
 
-#: code/lunacalc.js:148 code/lunacalc.js:150
+#: code/lunacalc.js:149 code/lunacalc.js:151
 msgid "Waning Crescent"
 msgstr "Старая луна"
 
-#: code/lunacalc.js:148
+#: code/lunacalc.js:149
 msgid "Tomorrow is New Moon"
 msgstr "Завтра новолуние"
 
-#: code/lunacalc.js:150
+#: code/lunacalc.js:151
 msgid "%1 days to New Moon"
 msgstr "%1 дня до новолуния"
 
-#: code/lunacalc.js:156
+#: code/lunacalc.js:157
 msgid "Full Moon"
 msgstr "Полнолуние"
 
-#: code/lunacalc.js:158 code/lunacalc.js:160
+#: code/lunacalc.js:159 code/lunacalc.js:161
 msgid "Waxing Gibbous"
 msgstr "Прибывающая луна"
 
-#: code/lunacalc.js:158
+#: code/lunacalc.js:159
 msgid "Tomorrow is Full Moon"
 msgstr "Завтра полнолуние"
 
-#: code/lunacalc.js:160
+#: code/lunacalc.js:161
 msgid "%1 days to Full Moon"
 msgstr "%1 дня до полной луны"
 
-#: code/lunacalc.js:162 code/lunacalc.js:164
+#: code/lunacalc.js:163 code/lunacalc.js:165
 msgid "Waning Gibbous"
 msgstr "Убывающая луна"
 
-#: code/lunacalc.js:162
+#: code/lunacalc.js:163
 msgid "Yesterday was Full Moon"
 msgstr "Вчера была полная луна"
 
-#: code/lunacalc.js:164
+#: code/lunacalc.js:165
 msgid "%1 days since Full Moon"
 msgstr "%1 дня с полной луны"
 
@@ -164,23 +164,23 @@ msgstr "Строка формата даты"
 msgid "Show background"
 msgstr "Показывать фон"
 
-#: ui/LunaWidget.qml:115
+#: ui/LunaWidget.qml:116
 msgid "Last new:"
 msgstr "Последняя новолуния:"
 
-#: ui/LunaWidget.qml:122
+#: ui/LunaWidget.qml:123
 msgid "First quarter:"
 msgstr "Первая четверть луны:"
 
-#: ui/LunaWidget.qml:129
+#: ui/LunaWidget.qml:130
 msgid "Full moon:"
 msgstr "Полнолуние:"
 
-#: ui/LunaWidget.qml:136
+#: ui/LunaWidget.qml:137
 msgid "Third quarter:"
 msgstr "Третья четверть луны"
 
-#: ui/LunaWidget.qml:143
+#: ui/LunaWidget.qml:144
 msgid "Next new:"
 msgstr "Следующая новолуние"
 
