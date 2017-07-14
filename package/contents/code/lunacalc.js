@@ -78,36 +78,37 @@ function reloadPhases()
 	return getPhasesByLunation(lunation);
 }
 
-function getCurrentPhase() // this function assumes that today is between phases[0] (last new moon) and phases[4] (next new moon)
+function getCurrentPhase(interpolate) // this function assumes that today is between phases[0] (last new moon) and phases[4] (next new moon)
 {
 
 	var oneDay = 1000 * 60 * 60 * 24;
 	var today = new Date().getTime();
 	var phases = getTodayPhases();
 
-  /* -------------------------------------------------------------------------
-  // Estimate where the terminator is - base this on knowing where it
-  // is at each quarter, and interpolating. Cowboy maths.
-  // Determines how far into the current quarter we are, and uses
-  // the result to work out where the terminator is. This allows for
-  // the quarters being different sizes, rather than assuming they are
-  // each one quarter of the cycle time.
+  var terminator;
+  if (interpolate) {
+		  // Estimate where the terminator is - base this on knowing where it
+		  // is at each quarter, and interpolating. Cowboy maths.
+		  // Determines how far into the current quarter we are, and uses
+		  // the result to work out where the terminator is. This allows for
+		  // the quarters being different sizes, rather than assuming they are
+		  // each one quarter of the cycle time.
 
-  var qnum = 0;
-  while (today > phases[qnum+1] && qnum < 3) {
-     qnum++;
+		  var qnum = 0;
+		  while (today > phases[qnum+1] && qnum < 3) {
+		     qnum++;
+		  }
+		  var quarterTime = phases[qnum+1].getTime() - phases[qnum].getTime();
+		  var sinceQuarter = today - phases[qnum].getTime();
+		  terminator = Math.floor(((sinceQuarter / quarterTime) + qnum) * 90);
   }
-  var quarterTime = phases[qnum+1].getTime() - phases[qnum].getTime();
-  var sinceQuarter = today - phases[qnum].getTime();
-  var terminator = Math.floor(((sinceQuarter / quarterTime) + qnum) * 90);
-  --------------------------------------------------------------------- */
-
-  // /*
-  // Work out where the terminator is, 0..359 degrees
-  var cycleTime = phases[4].getTime() - phases[0].getTime();
-  var sinceNew = today - phases[0].getTime();
-  var terminator = Math.floor((sinceNew / cycleTime) * 360);
-  // */
+	else {
+		  // Work out where the terminator is, 0..359 degrees.
+			// This assumes a constant rate for the month, which is unlikely
+		  var cycleTime = phases[4].getTime() - phases[0].getTime();
+		  var sinceNew = today - phases[0].getTime();
+		  terminator = Math.floor((sinceNew / cycleTime) * 360);
+  }
 
   // Keep this in the range [0,360):
 	if (terminator >= 360) {
