@@ -77,61 +77,37 @@ function reloadPhases()
 	return getPhasesByLunation(lunation);
 }
 
-/*
-function getCurrentPhase(phases)
+function getImageNumber(quarter,fraction)
 {
-	var oneDay = 1000 * 60 * 60 * 24;
-	var today = new Date().getTime();
+	var mapping = new Array();
+	mapping[0] = {first:0, last:7 }
+	mapping[1] = {first:7, last:13 }
+	mapping[2] = {first:13, last:21 }
+	mapping[3] = {first:21, last:28 }
 
-	// set time for all phases to 00:00:00 in order to obtain the correct phase for today (these changes should be local)
-	for (var i = 0; i < 5; i++) {
-		phases[i].setHours(0);
-		phases[i].setMinutes(0);
-		phases[i].setSeconds(0);
-	}
-
-	// days from last new
-	var phaseNumber = Math.floor((today - phases[0].getTime()) / oneDay);
-
-	var daysFromFullMoon = Math.floor((today - phases[2].getTime()) / oneDay);
-	if (daysFromFullMoon == 0)
-		phaseNumber = 14;
-	else if (phaseNumber <= 15 && phaseNumber >= 13)
-		phaseNumber = 14 + daysFromFullMoon;
-
-	var daysFromFirstQuarter = Math.floor((today - phases[1].getTime()) / oneDay);
-	if (daysFromFirstQuarter == 0)
-		phaseNumber = 7;
-	else if (phaseNumber <= 8 && phaseNumber >= 6)
-		phaseNumber = 7 + daysFromFirstQuarter;
-
-	var daysFromLastNew = Math.floor((today - phases[0].getTime()) / oneDay);
-	if (daysFromLastNew == 0)
-		phaseNumber = 0;
-	else if (daysFromLastNew <= 1 || daysFromLastNew >= 28) {
-		phaseNumber = (29 + daysFromLastNew) % 29;
-		daysToNextNew = -Math.floor((today - phases[4].getTime()) / oneDay);
-		if (daysToNextNew == 0)
-			phaseNumber = 0;
-		else if (daysToNextNew < 3)
-			phaseNumber = 29 - daysToNextNew;
-	}
-
-	var daysFromThirdQuarter = Math.floor((today - phases[3].getTime()) / oneDay);
-	if (daysFromThirdQuarter == 0)
-		phaseNumber = 21;
-	else if (phaseNumber <= 22 && phaseNumber >= 20)
-		phaseNumber = 21 + daysFromThirdQuarter;
-
-	return phaseNumber;
+    var range = mapping[quarter].last - mapping[quarter].first;
+	return Math.round(range * fraction + mapping[quarter].first);
 }
-*/
 
 function getCurrentPhase() // this function assumes that today is between phases[0] (last new moon) and phases[4] (next new moon)
 {
 	var oneDay = 1000 * 60 * 60 * 24;
 	var today = new Date().getTime();
 	var phases = getTodayPhases();
+
+	// Find which quarter is the current one
+	var qnum = 0;
+	while (today > phases[qnum+1] && qnum < 3) {
+	   qnum++;
+	}
+
+	// Work out an image number in the range 0-28. This interpolates
+	// between the times of the quarters, allowing for the quarters to
+	// have different durations. The result is going to be similar to
+	// the day number worked out below, but should match the sky better.
+	var quarterTime = phases[qnum+1].getTime() - phases[qnum].getTime();
+	var sinceQuarter = today - phases[qnum].getTime();
+	var imgNumber = getImageNumber(qnum,sinceQuarter/quarterTime);
 
 	// set time for all phases to 00:00:00 in order to obtain the correct phase for today (these changes should be local)
 	for (var i = 0; i < 5; i++) {
@@ -143,43 +119,43 @@ function getCurrentPhase() // this function assumes that today is between phases
 	// if today <= first quarter, calculate day since last new moon
 	var daysFromFirstQuarter = Math.floor((today - phases[1].getTime()) / oneDay);
 	if (daysFromFirstQuarter == 0)
-		return {number: 7, text: i18n("First Quarter"), subText: ""};
+		return {number: 7, text: i18n("First Quarter"), subText: "", img: imgNumber};
 	else if (daysFromFirstQuarter < 0) {
 		var daysFromLastNew = Math.floor((today - phases[0].getTime()) / oneDay);
 		if (daysFromLastNew == 0)
-			return {number: 0, text: i18n("New Moon"), subText: ""};
+			return {number: 0, text: i18n("New Moon"), subText: "", img: imgNumber};
 		else if (daysFromLastNew == 1)
-			return {number: 1, text: i18n("Waxing Crescent"), subText: i18n("Yesterday was New Moon")};
+			return {number: 1, text: i18n("Waxing Crescent"), subText: i18n("Yesterday was New Moon"), img: imgNumber};
 		else // assume that today >= last new moon
-			return {number: daysFromLastNew, text: i18n("Waxing Crescent"), subText: i18n("%1 days since New Moon", daysFromLastNew)};
+			return {number: daysFromLastNew, text: i18n("Waxing Crescent"), subText: i18n("%1 days since New Moon", daysFromLastNew), img: imgNumber};
 	}
 
 	// if today >= third quarter, calculate day until next new moon
 	var daysFromThirdQuarter = Math.floor((today - phases[3].getTime()) / oneDay);
 	if (daysFromThirdQuarter == 0)
-		return {number: 21, text: i18n("Last Quarter"), subText: ""};
+		return {number: 21, text: i18n("Last Quarter"), subText: "", img: imgNumber};
 	else if (daysFromThirdQuarter > 0) {
 		var daysToNextNew = -Math.floor((today - phases[4].getTime()) / oneDay);
 		if (daysToNextNew == 0)
-			return {number: 0, text: i18n("New Moon"), subText: ""};
+			return {number: 0, text: i18n("New Moon"), subText: "", img: imgNumber};
 		else if (daysToNextNew == 1)
-			return {number: 27, text: i18n("Waning Crescent"), subText: i18n("Tomorrow is New Moon")};
+			return {number: 27, text: i18n("Waning Crescent"), subText: i18n("Tomorrow is New Moon"), img: imgNumber};
 		else // assume that today <= next new moon
-			return {number: 28 - daysToNextNew, text: i18n("Waning Crescent"), subText: i18n("%1 days to New Moon", daysToNextNew)};
+			return {number: 28 - daysToNextNew, text: i18n("Waning Crescent"), subText: i18n("%1 days to New Moon", daysToNextNew), img: imgNumber};
 	}
 
 	// in all other cases, calculate day from or until full moon
 	var daysFromFullMoon = Math.floor((today - phases[2].getTime()) / oneDay);
 	if (daysFromFullMoon == 0)
-		return {number: 14, text: i18n("Full Moon"), subText: ""};
+		return {number: 14, text: i18n("Full Moon"), subText: "", img: imgNumber};
 	else if (daysFromFullMoon == -1)
-		return {number: 13, text: i18n("Waxing Gibbous"), subText: i18n("Tomorrow is Full Moon")};
+		return {number: 13, text: i18n("Waxing Gibbous"), subText: i18n("Tomorrow is Full Moon"), img: imgNumber};
 	else if (daysFromFullMoon < -1)
-		return {number: 14 + daysFromFullMoon, text: i18n("Waxing Gibbous"), subText: i18n("%1 days to Full Moon", -daysFromFullMoon)};
+		return {number: 14 + daysFromFullMoon, text: i18n("Waxing Gibbous"), subText: i18n("%1 days to Full Moon", -daysFromFullMoon), img: imgNumber};
 	else if (daysFromFullMoon == 1)
-		return {number: 15, text: i18n("Waning Gibbous"), subText: i18n("Yesterday was Full Moon")};
+		return {number: 15, text: i18n("Waning Gibbous"), subText: i18n("Yesterday was Full Moon"), img: imgNumber};
 	else if (daysFromFullMoon > 1)
-		return {number: 14 + daysFromFullMoon, text: i18n("Waning Gibbous"), subText: i18n("%1 days since Full Moon", daysFromFullMoon)};
+		return {number: 14 + daysFromFullMoon, text: i18n("Waning Gibbous"), subText: i18n("%1 days since Full Moon", daysFromFullMoon), img: imgNumber};
 
 	// this should never happen:
 	console.log("We cannot count :-(");
