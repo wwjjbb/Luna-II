@@ -189,10 +189,8 @@ Item {
             maximumLength: 24
             visible: dateFormat.currentIndex == 4
         }
-
-        QtControls.CheckBox {
-            id: transparentShadow
-            text: i18n("Transparent shadow")
+        QtControls.Label {
+            text: i18n("Background")
         }
         QtControls.CheckBox {
             id: showBackground
@@ -201,6 +199,9 @@ Item {
         QtControls.Label {
             text: ""
         }
-
+        QtControls.CheckBox {
+            id: transparentShadow
+            text: i18n("Transparent shadow")
+        }
     }
 }

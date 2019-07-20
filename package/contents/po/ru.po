@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
-"POT-Creation-Date: 2017-07-14 15:33+0100\n"
+"POT-Creation-Date: 2019-07-21 01:43+0200\n"
 "PO-Revision-Date: 2017-07-01 14:29+0100\n"
 "Last-Translator: Bill Binder <dxtwjb@gmail.com>\n"
 "Language-Team: n/a\n"
@@ -96,73 +96,82 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "dxtwjb@gmail.com"
 
-#: ui/configGeneral.qml:53
+#: ui/configGeneral.qml:54
 msgid "Pick a colour for the moon"
 msgstr "Выберите цвет для луны"
 
-#: ui/configGeneral.qml:66
+#: ui/configGeneral.qml:67
 msgid "Preview"
 msgstr "Лунное изображение"
 
-#: ui/configGeneral.qml:108
+#: ui/configGeneral.qml:110
 msgid "Show grid"
 msgstr "Показывать фон"
 
-#: ui/configGeneral.qml:113
+#: ui/configGeneral.qml:115
 msgid "Tycho"
 msgstr "Тихо"
 
-#: ui/configGeneral.qml:118
+#: ui/configGeneral.qml:120
 msgid "Copernicus"
 msgstr "Коперник"
 
-#: ui/configGeneral.qml:125
+#: ui/configGeneral.qml:127
 msgid "Disk Colour"
 msgstr "Цвет луны"
 
-#: ui/configGeneral.qml:147
+#: ui/configGeneral.qml:149
 msgid "Hemisphere"
 msgstr "местоположение"
 
-#: ui/configGeneral.qml:156
+#: ui/configGeneral.qml:158
 msgid "Northern"
 msgstr "Северное полушарие"
 
-#: ui/configGeneral.qml:157
+#: ui/configGeneral.qml:159
 msgid "Southern"
 msgstr "Южное полушарие"
 
-#: ui/configGeneral.qml:163
+#: ui/configGeneral.qml:165
 msgid "Date Format"
 msgstr "Формат даты"
 
-#: ui/configGeneral.qml:172
+#: ui/configGeneral.qml:174
 msgid "Text date"
 msgstr "Дата форматирования текста"
 
-#: ui/configGeneral.qml:173
+#: ui/configGeneral.qml:175
 msgid "Short date"
 msgstr "Краткая дата в формате"
 
-#: ui/configGeneral.qml:174
+#: ui/configGeneral.qml:176
 msgid "Long date"
 msgstr "Длинная форма дата"
 
-#: ui/configGeneral.qml:175
+#: ui/configGeneral.qml:177
 msgid "ISO date"
 msgstr "Дата формата ISO"
 
-#: ui/configGeneral.qml:176
+#: ui/configGeneral.qml:178
 msgid "Custom"
 msgstr "Дата пользовательского формата"
 
-#: ui/configGeneral.qml:182
+#: ui/configGeneral.qml:184
 msgid "Date Format String"
 msgstr "Строка формата даты"
 
 #: ui/configGeneral.qml:193
+#, fuzzy
+msgid "Background"
+msgstr "Показывать фон"
+
+#: ui/configGeneral.qml:197
 msgid "Show background"
 msgstr "Показывать фон"
+
+#: ui/configGeneral.qml:204
+msgid "Transparent shadow"
+msgstr ""
 
 #: ui/LunaWidget.qml:116
 msgid "Last new:"

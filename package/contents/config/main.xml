@@ -12,6 +12,9 @@
     <entry name="showBackground" type="Bool">
       <default>false</default>
     </entry>
+    <entry name="transparentShadow" type="Bool">
+      <default>false</default>
+    </entry>
     <entry name="dateFormat" type="int">
       <default>3</default>
     </entry>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
-"POT-Creation-Date: 2017-07-14 15:33+0100\n"
+"POT-Creation-Date: 2019-07-21 01:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -95,72 +95,80 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: ui/configGeneral.qml:53
+#: ui/configGeneral.qml:54
 msgid "Pick a colour for the moon"
 msgstr ""
 
-#: ui/configGeneral.qml:66
+#: ui/configGeneral.qml:67
 msgid "Preview"
 msgstr ""
 
-#: ui/configGeneral.qml:108
+#: ui/configGeneral.qml:110
 msgid "Show grid"
 msgstr ""
 
-#: ui/configGeneral.qml:113
+#: ui/configGeneral.qml:115
 msgid "Tycho"
 msgstr ""
 
-#: ui/configGeneral.qml:118
+#: ui/configGeneral.qml:120
 msgid "Copernicus"
 msgstr ""
 
-#: ui/configGeneral.qml:125
+#: ui/configGeneral.qml:127
 msgid "Disk Colour"
 msgstr ""
 
-#: ui/configGeneral.qml:147
+#: ui/configGeneral.qml:149
 msgid "Hemisphere"
 msgstr ""
 
-#: ui/configGeneral.qml:156
+#: ui/configGeneral.qml:158
 msgid "Northern"
 msgstr ""
 
-#: ui/configGeneral.qml:157
+#: ui/configGeneral.qml:159
 msgid "Southern"
 msgstr ""
 
-#: ui/configGeneral.qml:163
+#: ui/configGeneral.qml:165
 msgid "Date Format"
 msgstr ""
 
-#: ui/configGeneral.qml:172
+#: ui/configGeneral.qml:174
 msgid "Text date"
 msgstr ""
 
-#: ui/configGeneral.qml:173
+#: ui/configGeneral.qml:175
 msgid "Short date"
 msgstr ""
 
-#: ui/configGeneral.qml:174
+#: ui/configGeneral.qml:176
 msgid "Long date"
 msgstr ""
 
-#: ui/configGeneral.qml:175
+#: ui/configGeneral.qml:177
 msgid "ISO date"
 msgstr ""
 
-#: ui/configGeneral.qml:176
+#: ui/configGeneral.qml:178
 msgid "Custom"
 msgstr ""
 
-#: ui/configGeneral.qml:182
+#: ui/configGeneral.qml:184
 msgid "Date Format String"
 msgstr ""
 
 #: ui/configGeneral.qml:193
+msgid "Background"
+msgstr ""
+
+#: ui/configGeneral.qml:197
 msgid "Show background"
+msgstr ""
+
+#: ui/configGeneral.qml:204
+msgid "Transparent shadow"
 msgstr ""
 
 #: ui/LunaWidget.qml:116
