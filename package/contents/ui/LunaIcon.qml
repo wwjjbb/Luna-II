@@ -19,6 +19,7 @@
 */
 
 import QtQuick 2.1
+import QtGraphicalEffects 1.12
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.plasmoid 2.0
 
@@ -30,6 +31,8 @@ Item {
     property int phaseNumber: 0
     property int hemisphere: 0
     property bool showShadow: true
+    property bool transparentShadow: true
+
     property string lunarImage: ''
     property color diskColour: '#ffffff'
     property int lunarImageTweak: 0
@@ -58,12 +61,15 @@ Item {
         // deal with northern <-> southern hemisphere
         transformOrigin: Item.Center
         rotation: (hemisphere == 0 ? 0 : 180) - lunarImageTweak
+        visible: !transparentShadow
     }
 
     Canvas {
         id: shadow
         width: lunaSvgItem.width
         height: lunaSvgItem.height
+        visible: !transparentShadow
+
         property int hemisphere: lunaIcon.hemisphere
         property int theta: lunaIcon.theta
         property bool showShadow: lunaIcon.showShadow
@@ -188,5 +194,13 @@ Item {
                   marker(9.6,-20)    // Copernicus
             }
         }
+    }
+
+    OpacityMask {
+        anchors.fill: lunaSvgItem
+        source: lunaSvgItem
+        maskSource: shadow
+        invert: true
+        visible: transparentShadow
     }
 }

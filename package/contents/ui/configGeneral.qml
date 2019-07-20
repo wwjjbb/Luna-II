@@ -26,6 +26,7 @@ Item {
     id: generalPage
 
     property alias cfg_hemisphere: hemisphere.currentIndex  // 0=North 1=South
+    property alias cfg_transparentShadow: transparentShadow.checked  // boolean
     property alias cfg_showBackground: showBackground.checked  // boolean
     property alias cfg_dateFormat: dateFormat.currentIndex // code: 0= 1= 2=...
     property alias cfg_dateFormatString: dateFormatString.text
@@ -83,6 +84,7 @@ Item {
               height: 200
               hemisphere: cfg_hemisphere
               showShadow: false
+              transparentShadow: false
               lunarImage: cfg_lunarImage
               lunarImageTweak: cfg_lunarImageTweak
               diskColour: cfg_diskColour
@@ -188,6 +190,10 @@ Item {
             visible: dateFormat.currentIndex == 4
         }
 
+        QtControls.CheckBox {
+            id: transparentShadow
+            text: i18n("Transparent shadow")
+        }
         QtControls.CheckBox {
             id: showBackground
             text: i18n("Show background")
