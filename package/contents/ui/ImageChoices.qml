@@ -17,7 +17,7 @@
 
 import QtQuick 2.1 as QtQuick
 
-/*
+/*lunarIndex
 Defines the list of images of the moon.
   key - was a string name to be be shown in a ComboBox - not used
   value - not used because elsewhere just uses the index into this model

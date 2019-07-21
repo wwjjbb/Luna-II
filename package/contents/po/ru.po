@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
-"POT-Creation-Date: 2019-07-21 01:43+0200\n"
+"POT-Creation-Date: 2019-07-21 12:13+0200\n"
 "PO-Revision-Date: 2017-07-01 14:29+0100\n"
 "Last-Translator: Bill Binder <dxtwjb@gmail.com>\n"
 "Language-Team: n/a\n"
@@ -121,55 +121,47 @@ msgid "Disk Colour"
 msgstr "Цвет луны"
 
 #: ui/configGeneral.qml:149
-msgid "Hemisphere"
-msgstr "местоположение"
+msgid "Latitude"
+msgstr ""
 
-#: ui/configGeneral.qml:158
-msgid "Northern"
-msgstr "Северное полушарие"
-
-#: ui/configGeneral.qml:159
-msgid "Southern"
-msgstr "Южное полушарие"
-
-#: ui/configGeneral.qml:165
+#: ui/configGeneral.qml:172
 msgid "Date Format"
 msgstr "Формат даты"
 
-#: ui/configGeneral.qml:174
+#: ui/configGeneral.qml:181
 msgid "Text date"
 msgstr "Дата форматирования текста"
 
-#: ui/configGeneral.qml:175
+#: ui/configGeneral.qml:182
 msgid "Short date"
 msgstr "Краткая дата в формате"
 
-#: ui/configGeneral.qml:176
+#: ui/configGeneral.qml:183
 msgid "Long date"
 msgstr "Длинная форма дата"
 
-#: ui/configGeneral.qml:177
+#: ui/configGeneral.qml:184
 msgid "ISO date"
 msgstr "Дата формата ISO"
 
-#: ui/configGeneral.qml:178
+#: ui/configGeneral.qml:185
 msgid "Custom"
 msgstr "Дата пользовательского формата"
 
-#: ui/configGeneral.qml:184
+#: ui/configGeneral.qml:191
 msgid "Date Format String"
 msgstr "Строка формата даты"
 
-#: ui/configGeneral.qml:193
+#: ui/configGeneral.qml:200
 #, fuzzy
 msgid "Background"
 msgstr "Показывать фон"
 
-#: ui/configGeneral.qml:197
+#: ui/configGeneral.qml:204
 msgid "Show background"
 msgstr "Показывать фон"
 
-#: ui/configGeneral.qml:204
+#: ui/configGeneral.qml:211
 msgid "Transparent shadow"
 msgstr ""
 
@@ -192,6 +184,15 @@ msgstr "Третья четверть луны"
 #: ui/LunaWidget.qml:144
 msgid "Next new:"
 msgstr "Следующая новолуние"
+
+#~ msgid "Hemisphere"
+#~ msgstr "местоположение"
+
+#~ msgid "Northern"
+#~ msgstr "Северное полушарие"
+
+#~ msgid "Southern"
+#~ msgstr "Южное полушарие"
 
 #~ msgid "Lunar Image"
 #~ msgstr "Лунное изображение"

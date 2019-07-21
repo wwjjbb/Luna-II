@@ -25,7 +25,7 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 Item {
     id: generalPage
 
-    property alias cfg_hemisphere: hemisphere.currentIndex  // 0=North 1=South
+    property alias cfg_latitude: latitude.value  // 0=Equator, +90=North Pole, -90=South Pole
     property alias cfg_transparentShadow: transparentShadow.checked  // boolean
     property alias cfg_showBackground: showBackground.checked  // boolean
     property alias cfg_dateFormat: dateFormat.currentIndex // code: 0= 1= 2=...
@@ -82,7 +82,7 @@ Item {
               id: lunaPreview
               width: 200
               height: 200
-              hemisphere: cfg_hemisphere
+              latitude: cfg_latitude
               showShadow: false
               transparentShadow: false
               lunarImage: cfg_lunarImage
@@ -146,18 +146,25 @@ Item {
         }
 
         QtControls.Label {
-            text: i18n("Hemisphere")
+            text: i18n("Latitude")
         }
-        QtControls.ComboBox {
-            id: hemisphere
-            QtLayouts.Layout.fillWidth: true
-            textRole: "key"
-            model: ListModel {
-                dynamicRoles: true
-                Component.onCompleted: {
-                append({key : i18n("Northern"), value: 0 })
-                append({key : i18n("Southern"), value: 1 })
-                }
+        QtLayouts.RowLayout {
+            spacing: 20
+
+            QtControls.Label {
+                id: lbl_latitude
+                text: Math.abs(latitude.value) + "º " + (latitude.value < 0 ? "S" : "N")
+                QtLayouts.Layout.preferredWidth: 40
+                horizontalAlignment: Text.AlignRight
+            }
+
+            QtControls.Slider {
+                id: latitude
+                QtLayouts.Layout.fillWidth: true
+                minimumValue: -90.0
+                maximumValue: 90.0
+                stepSize: 5.0
+                tickmarksEnabled: true
             }
         }
 

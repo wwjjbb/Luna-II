@@ -6,8 +6,8 @@
   <kcfgfile name=""/>
 
   <group name="General">
-    <entry name="hemisphere" type="int">
-      <default>0</default>
+    <entry name="latitude" type="int">
+      <default>90</default>
     </entry>
     <entry name="showBackground" type="Bool">
       <default>false</default>

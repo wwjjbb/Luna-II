@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
-"POT-Creation-Date: 2019-07-21 01:43+0200\n"
+"POT-Creation-Date: 2019-07-21 12:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -120,54 +120,46 @@ msgid "Disk Colour"
 msgstr ""
 
 #: ui/configGeneral.qml:149
-msgid "Hemisphere"
+msgid "Latitude"
 msgstr ""
 
-#: ui/configGeneral.qml:158
-msgid "Northern"
-msgstr ""
-
-#: ui/configGeneral.qml:159
-msgid "Southern"
-msgstr ""
-
-#: ui/configGeneral.qml:165
+#: ui/configGeneral.qml:172
 msgid "Date Format"
 msgstr ""
 
-#: ui/configGeneral.qml:174
+#: ui/configGeneral.qml:181
 msgid "Text date"
 msgstr ""
 
-#: ui/configGeneral.qml:175
+#: ui/configGeneral.qml:182
 msgid "Short date"
 msgstr ""
 
-#: ui/configGeneral.qml:176
+#: ui/configGeneral.qml:183
 msgid "Long date"
 msgstr ""
 
-#: ui/configGeneral.qml:177
+#: ui/configGeneral.qml:184
 msgid "ISO date"
 msgstr ""
 
-#: ui/configGeneral.qml:178
+#: ui/configGeneral.qml:185
 msgid "Custom"
 msgstr ""
 
-#: ui/configGeneral.qml:184
+#: ui/configGeneral.qml:191
 msgid "Date Format String"
 msgstr ""
 
-#: ui/configGeneral.qml:193
+#: ui/configGeneral.qml:200
 msgid "Background"
 msgstr ""
 
-#: ui/configGeneral.qml:197
+#: ui/configGeneral.qml:204
 msgid "Show background"
 msgstr ""
 
-#: ui/configGeneral.qml:204
+#: ui/configGeneral.qml:211
 msgid "Transparent shadow"
 msgstr ""
 

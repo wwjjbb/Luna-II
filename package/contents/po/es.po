@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
-"POT-Creation-Date: 2019-07-21 01:43+0200\n"
-"PO-Revision-Date: 2019-07-21 01:43+0200\n"
+"POT-Creation-Date: 2019-07-21 12:13+0200\n"
+"PO-Revision-Date: 2019-07-21 12:14+0200\n"
 "Last-Translator: Ismael <ismailof@github.com>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "Language: fr_FR\n"
@@ -125,54 +125,46 @@ msgid "Disk Colour"
 msgstr "Color del disco"
 
 #: ui/configGeneral.qml:149
-msgid "Hemisphere"
-msgstr "Hemisferio"
+msgid "Latitude"
+msgstr "Latitud"
 
-#: ui/configGeneral.qml:158
-msgid "Northern"
-msgstr "Norte"
-
-#: ui/configGeneral.qml:159
-msgid "Southern"
-msgstr "Sur"
-
-#: ui/configGeneral.qml:165
+#: ui/configGeneral.qml:172
 msgid "Date Format"
 msgstr "Formato de fecha"
 
-#: ui/configGeneral.qml:174
+#: ui/configGeneral.qml:181
 msgid "Text date"
 msgstr "Fecha en texto"
 
-#: ui/configGeneral.qml:175
+#: ui/configGeneral.qml:182
 msgid "Short date"
 msgstr "Fecha corta"
 
-#: ui/configGeneral.qml:176
+#: ui/configGeneral.qml:183
 msgid "Long date"
 msgstr "Fecha larga"
 
-#: ui/configGeneral.qml:177
+#: ui/configGeneral.qml:184
 msgid "ISO date"
 msgstr "Fecha ISO"
 
-#: ui/configGeneral.qml:178
+#: ui/configGeneral.qml:185
 msgid "Custom"
 msgstr "Personalizar"
 
-#: ui/configGeneral.qml:184
+#: ui/configGeneral.qml:191
 msgid "Date Format String"
 msgstr "Formato de fecha personalizada"
 
-#: ui/configGeneral.qml:193
+#: ui/configGeneral.qml:200
 msgid "Background"
 msgstr "Fondo"
 
-#: ui/configGeneral.qml:197
+#: ui/configGeneral.qml:204
 msgid "Show background"
 msgstr "Mostrar fondo"
 
-#: ui/configGeneral.qml:204
+#: ui/configGeneral.qml:211
 msgid "Transparent shadow"
 msgstr "Sombra transparente"
 
@@ -195,6 +187,15 @@ msgstr "Cuarto menguante:"
 #: ui/LunaWidget.qml:144
 msgid "Next new:"
 msgstr "Próxima luna nueva:"
+
+#~ msgid "Hemisphere"
+#~ msgstr "Hemisferio"
+
+#~ msgid "Northern"
+#~ msgstr "Norte"
+
+#~ msgid "Southern"
+#~ msgstr "Sur"
 
 #~ msgid "Lunar Image"
 #~ msgstr "Image lunaire"
