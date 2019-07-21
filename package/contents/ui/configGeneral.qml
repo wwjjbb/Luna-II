@@ -21,10 +21,13 @@ import QtQuick.Layouts 1.2 as QtLayouts
 import QtQuick.Dialogs 1.0 as QtDialogs
 
 import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.core 2.0 as PlasmaCore
+
 
 Item {
     id: generalPage
 
+    property alias cfg_latitudeAuto: latitudeAuto.checked  // 0=Equator, +90=North Pole, -90=South Pole
     property alias cfg_latitude: latitude.value  // 0=Equator, +90=North Pole, -90=South Pole
     property alias cfg_transparentShadow: transparentShadow.checked  // boolean
     property alias cfg_showBackground: showBackground.checked  // boolean
@@ -47,6 +50,17 @@ Item {
 
     ImageChoices {
         id: imageChoices
+    }
+
+    PlasmaCore.DataSource {
+        id: geoSource
+        engine: "geolocation"
+        connectedSources: ["location"]
+        interval: 3600 * 1000
+
+        onNewData:{
+            lbl_place.text = i18n(geoSource.data.location.country)
+        }
     }
 
     QtDialogs.ColorDialog {
@@ -165,6 +179,28 @@ Item {
                 maximumValue: 90.0
                 stepSize: 5.0
                 tickmarksEnabled: true
+                enabled: !cfg_latitudeAuto
+            }
+        }
+        QtControls.Label {
+            text: i18n("")
+        }
+        QtLayouts.RowLayout {
+            spacing: 20
+            QtControls.CheckBox {
+                id: latitudeAuto
+                text: i18n("Use current latitude")
+
+                onClicked: {
+                    if (cfg_latitudeAuto) {
+                        cfg_latitude = geoSource.data.location.latitude
+                    }
+                }
+            }
+            QtControls.Label {
+                id: lbl_place
+                QtLayouts.Layout.fillWidth: true
+                horizontalAlignment: Text.AlignRight
             }
         }
 
