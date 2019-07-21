@@ -46,7 +46,16 @@ Item {
     onCfg_lunarIndexChanged: {
         cfg_lunarImage = imageChoices.get(cfg_lunarIndex).filename
         cfg_lunarImageTweak = imageChoices.get(cfg_lunarIndex).tweak
-      }
+        if (cfg_lunarImage == '') {
+            cfg_transparentShadow = false  //transparentShadow does not work with diskColour
+        }
+    }
+
+    onCfg_latitudeAutoChanged: {
+        if (cfg_latitudeAuto) {
+            cfg_latitude = geoSource.data.location.latitude
+        }
+    }
 
     ImageChoices {
         id: imageChoices
@@ -190,12 +199,6 @@ Item {
             QtControls.CheckBox {
                 id: latitudeAuto
                 text: i18n("Use current latitude")
-
-                onClicked: {
-                    if (cfg_latitudeAuto) {
-                        cfg_latitude = geoSource.data.location.latitude
-                    }
-                }
             }
             QtControls.Label {
                 id: lbl_place
@@ -245,6 +248,7 @@ Item {
         QtControls.CheckBox {
             id: transparentShadow
             text: i18n("Transparent shadow")
+            enabled: cfg_lunarImage != ""
         }
     }
 }
