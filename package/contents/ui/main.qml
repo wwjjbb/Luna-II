@@ -39,6 +39,7 @@ Item {
     property var currentPhase
 
     property bool showBackground: Plasmoid.configuration.showBackground
+    property bool transparentShadow: Plasmoid.configuration.transparentShadow
     property int hemisphere: Plasmoid.configuration.hemisphere
     property int dateFormat: Plasmoid.configuration.dateFormat
     property string dateFormatString: Plasmoid.configuration.dateFormatString
@@ -96,6 +97,7 @@ Item {
             hemisphere: hemisphere
             lunarImage: main.lunarImage
             lunarImageTweak: main.lunarImageTweak
+            transparentShadow: main.transparentShadow
             diskColour: main.diskColour
 
             anchors.fill: parent
