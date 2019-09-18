@@ -40,7 +40,7 @@ Item {
 
     property bool showBackground: Plasmoid.configuration.showBackground
     property bool transparentShadow: Plasmoid.configuration.transparentShadow
-    property int hemisphere: Plasmoid.configuration.hemisphere
+    property int latitude: Plasmoid.configuration.latitude
     property int dateFormat: Plasmoid.configuration.dateFormat
     property string dateFormatString: Plasmoid.configuration.dateFormatString
 
@@ -59,13 +59,13 @@ Item {
     Plasmoid.compactRepresentation: Item {
         id: compact
 
-        property int hemisphere: main.hemisphere
+        property int latitude: main.latitude
         property bool showBackground: main.showBackground
         property int lunarIndex: main.lunarIndex
 
         Component.onCompleted: updateDetails()
 
-        onHemisphereChanged: updateDetails()
+        onLatitudeChanged: updateDetails()
 
         onLunarIndexChanged: updateDetails()
 
@@ -74,7 +74,7 @@ Item {
             currentPhase = LunaCalc.getCurrentPhase(true);
             lunaIcon.phaseNumber = 13; //currentPhase.number;
             lunaIcon.theta = currentPhase.terminator;
-            lunaIcon.hemisphere = hemisphere;
+            lunaIcon.latitude = latitude;
 
             main.lunarImage = imageChoices.get(main.lunarIndex).filename
             main.lunarImageTweak = imageChoices.get(main.lunarIndex).tweak
@@ -94,7 +94,7 @@ Item {
 
         LunaIcon {
             id: lunaIcon
-            hemisphere: hemisphere
+            latitude: main.latitude
             lunarImage: main.lunarImage
             lunarImageTweak: main.lunarImageTweak
             transparentShadow: main.transparentShadow

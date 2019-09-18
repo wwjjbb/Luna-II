@@ -29,7 +29,7 @@ Item {
     id: lunaIcon
 
     property int phaseNumber: 0
-    property int hemisphere: 0
+    property int latitude: 90  //Degrees: 0=Equator, 90=North Pole, -90=South Pole
     property bool showShadow: true
     property bool transparentShadow: true
 
@@ -51,26 +51,27 @@ Item {
 
     PlasmaCore.SvgItem {
         id: lunaSvgItem
+        visible: false 
 
         anchors.centerIn: parent
-        width: Math.min(parent.width,parent.height)
-        height: Math.min(parent.width,parent.height)
+        width: Math.min(parent.width, parent.height)
+        height: Math.min(parent.width, parent.height)
 
         svg: lunaSvg
 
-        // deal with northern <-> southern hemisphere
+        // Rotation to compensate the moon's image basic position to a north pole view
+        // FIXME: Somehow it does not work when applied to OpacityMask or Blend
         transformOrigin: Item.Center
-        rotation: (hemisphere == 0 ? 0 : 180) - lunarImageTweak
-        visible: !transparentShadow
+        rotation: -lunarImageTweak  
     }
 
     Canvas {
         id: shadow
         width: lunaSvgItem.width
         height: lunaSvgItem.height
-        visible: !transparentShadow
+        visible: false
 
-        property int hemisphere: lunaIcon.hemisphere
+        property int latitude: lunaIcon.latitude
         property int theta: lunaIcon.theta
         property bool showShadow: lunaIcon.showShadow
         property string lunarImage: lunaIcon.lunarImage
@@ -82,7 +83,7 @@ Item {
         anchors.centerIn: parent
         contextType: "2d"
 
-        onHemisphereChanged: requestPaint()
+        onLatitudeChanged: requestPaint()
 
         onThetaChanged: requestPaint()
 
@@ -149,8 +150,6 @@ Item {
             //console.log("radius: " + radius.toString())
 
             context.translate(radius,radius)
-            if (hemisphere>0)
-              context.rotate(Math.PI)
 
             // These two determine which side of the centre meridan to draw
             // the two arcs enclosing the shadow area.
@@ -196,11 +195,23 @@ Item {
         }
     }
 
+    // Shadow acts as a transparecy mask
     OpacityMask {
         anchors.fill: lunaSvgItem
         source: lunaSvgItem
         maskSource: shadow
         invert: true
+        rotation: latitude - 90
         visible: transparentShadow
+    }
+
+    // Shadow is printed on top of the moon image
+    Blend {
+        anchors.fill: lunaSvgItem
+        source: lunaSvgItem
+        foregroundSource: shadow
+        rotation: latitude - 90
+        mode: "normal"
+        visible: !transparentShadow
     }
 }

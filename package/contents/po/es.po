@@ -4,6 +4,7 @@
 # This file is distributed under the same license as the plasma-applet-luna-qml package.
 #
 #
+#: ui/configGeneral.qml:186
 # Bill Binder <dxtwjb@gmail.com>, 2017.
 # Glad Deschrijver <glad.deschrijver@gmail.com>, 2012.
 # Ismael <ismailof@github.com>, 2019.
@@ -11,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
-"POT-Creation-Date: 2019-07-21 01:43+0200\n"
-"PO-Revision-Date: 2019-07-21 01:43+0200\n"
+"POT-Creation-Date: 2019-07-21 14:16+0200\n"
+"PO-Revision-Date: 2019-07-21 14:17+0200\n"
 "Last-Translator: Ismael <ismailof@github.com>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "Language: fr_FR\n"
@@ -100,79 +101,75 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ismailof@github.com"
 
-#: ui/configGeneral.qml:54
+#: ui/configGeneral.qml:68
 msgid "Pick a colour for the moon"
 msgstr "Seleccione un color para la luna"
 
-#: ui/configGeneral.qml:67
+#: ui/configGeneral.qml:81
 msgid "Preview"
 msgstr "Vista previa"
 
-#: ui/configGeneral.qml:110
+#: ui/configGeneral.qml:124
 msgid "Show grid"
 msgstr "Mostrar rejilla"
 
-#: ui/configGeneral.qml:115
+#: ui/configGeneral.qml:129
 msgid "Tycho"
 msgstr ""
 
-#: ui/configGeneral.qml:120
+#: ui/configGeneral.qml:134
 msgid "Copernicus"
 msgstr "Copérnico"
 
-#: ui/configGeneral.qml:127
+#: ui/configGeneral.qml:141
 msgid "Disk Colour"
 msgstr "Color del disco"
 
-#: ui/configGeneral.qml:149
-msgid "Hemisphere"
-msgstr "Hemisferio"
+#: ui/configGeneral.qml:163
+msgid "Latitude"
+msgstr "Latitud"
 
-#: ui/configGeneral.qml:158
-msgid "Northern"
-msgstr "Norte"
+#: ui/configGeneral.qml:192
+msgid "Use current latitude"
+msgstr "Usar latitud actual"
 
-#: ui/configGeneral.qml:159
-msgid "Southern"
-msgstr "Sur"
-
-#: ui/configGeneral.qml:165
+#: ui/configGeneral.qml:208
 msgid "Date Format"
 msgstr "Formato de fecha"
 
-#: ui/configGeneral.qml:174
+#: ui/configGeneral.qml:217
 msgid "Text date"
 msgstr "Fecha en texto"
 
-#: ui/configGeneral.qml:175
+#: ui/configGeneral.qml:218
 msgid "Short date"
 msgstr "Fecha corta"
 
-#: ui/configGeneral.qml:176
+#: ui/configGeneral.qml:219
 msgid "Long date"
 msgstr "Fecha larga"
 
-#: ui/configGeneral.qml:177
+#: ui/configGeneral.qml:220
 msgid "ISO date"
 msgstr "Fecha ISO"
 
-#: ui/configGeneral.qml:178
+#: ui/configGeneral.qml:221
 msgid "Custom"
 msgstr "Personalizar"
 
-#: ui/configGeneral.qml:184
+#: ui/configGeneral.qml:227
 msgid "Date Format String"
 msgstr "Formato de fecha personalizada"
 
-#: ui/configGeneral.qml:193
+#: ui/configGeneral.qml:236
 msgid "Background"
 msgstr "Fondo"
 
-#: ui/configGeneral.qml:197
+#: ui/configGeneral.qml:240
 msgid "Show background"
 msgstr "Mostrar fondo"
 
-#: ui/configGeneral.qml:204
+#: ui/configGeneral.qml:247
 msgid "Transparent shadow"
 msgstr "Sombra transparente"
 
@@ -195,6 +192,15 @@ msgstr "Cuarto menguante:"
 #: ui/LunaWidget.qml:144
 msgid "Next new:"
 msgstr "Próxima luna nueva:"
+
+#~ msgid "Hemisphere"
+#~ msgstr "Hemisferio"
+
+#~ msgid "Northern"
+#~ msgstr "Norte"
+
+#~ msgid "Southern"
+#~ msgstr "Sur"
 
 #~ msgid "Lunar Image"
 #~ msgstr "Image lunaire"

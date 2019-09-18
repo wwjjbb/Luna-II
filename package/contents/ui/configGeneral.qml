@@ -21,11 +21,14 @@ import QtQuick.Layouts 1.2 as QtLayouts
 import QtQuick.Dialogs 1.0 as QtDialogs
 
 import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.core 2.0 as PlasmaCore
+
 
 Item {
     id: generalPage
 
-    property alias cfg_hemisphere: hemisphere.currentIndex  // 0=North 1=South
+    property alias cfg_latitudeAuto: latitudeAuto.checked  // 0=Equator, +90=North Pole, -90=South Pole
+    property alias cfg_latitude: latitude.value  // 0=Equator, +90=North Pole, -90=South Pole
     property alias cfg_transparentShadow: transparentShadow.checked  // boolean
     property alias cfg_showBackground: showBackground.checked  // boolean
     property alias cfg_dateFormat: dateFormat.currentIndex // code: 0= 1= 2=...
@@ -43,10 +46,30 @@ Item {
     onCfg_lunarIndexChanged: {
         cfg_lunarImage = imageChoices.get(cfg_lunarIndex).filename
         cfg_lunarImageTweak = imageChoices.get(cfg_lunarIndex).tweak
-      }
+        if (cfg_lunarImage == '') {
+            cfg_transparentShadow = false  //transparentShadow does not work with diskColour
+        }
+    }
+
+    onCfg_latitudeAutoChanged: {
+        if (cfg_latitudeAuto) {
+            cfg_latitude = geoSource.data.location.latitude
+        }
+    }
 
     ImageChoices {
         id: imageChoices
+    }
+
+    PlasmaCore.DataSource {
+        id: geoSource
+        engine: "geolocation"
+        connectedSources: ["location"]
+        interval: 3600 * 1000
+
+        onNewData:{
+            lbl_place.text = i18n(geoSource.data.location.country)
+        }
     }
 
     QtDialogs.ColorDialog {
@@ -82,7 +105,7 @@ Item {
               id: lunaPreview
               width: 200
               height: 200
-              hemisphere: cfg_hemisphere
+              latitude: cfg_latitude
               showShadow: false
               transparentShadow: false
               lunarImage: cfg_lunarImage
@@ -146,18 +169,41 @@ Item {
         }
 
         QtControls.Label {
-            text: i18n("Hemisphere")
+            text: i18n("Latitude")
         }
-        QtControls.ComboBox {
-            id: hemisphere
-            QtLayouts.Layout.fillWidth: true
-            textRole: "key"
-            model: ListModel {
-                dynamicRoles: true
-                Component.onCompleted: {
-                append({key : i18n("Northern"), value: 0 })
-                append({key : i18n("Southern"), value: 1 })
-                }
+        QtLayouts.RowLayout {
+            spacing: 20
+
+            QtControls.Label {
+                id: lbl_latitude
+                text: Math.abs(latitude.value) + "º " + (latitude.value < 0 ? "S" : "N")
+                QtLayouts.Layout.preferredWidth: 40
+                horizontalAlignment: Text.AlignRight
+            }
+
+            QtControls.Slider {
+                id: latitude
+                QtLayouts.Layout.fillWidth: true
+                minimumValue: -90.0
+                maximumValue: 90.0
+                stepSize: 5.0
+                tickmarksEnabled: true
+                enabled: !cfg_latitudeAuto
+            }
+        }
+        QtControls.Label {
+            text: i18n("")
+        }
+        QtLayouts.RowLayout {
+            spacing: 20
+            QtControls.CheckBox {
+                id: latitudeAuto
+                text: i18n("Use current latitude")
+            }
+            QtControls.Label {
+                id: lbl_place
+                QtLayouts.Layout.fillWidth: true
+                horizontalAlignment: Text.AlignRight
             }
         }
 
@@ -202,6 +248,7 @@ Item {
         QtControls.CheckBox {
             id: transparentShadow
             text: i18n("Transparent shadow")
+            enabled: cfg_lunarImage != ""
         }
     }
 }

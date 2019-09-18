@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: ui/configGeneral.qml:186
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
-"POT-Creation-Date: 2019-07-21 01:43+0200\n"
+"POT-Creation-Date: 2019-07-21 14:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -95,79 +96,75 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: ui/configGeneral.qml:54
+#: ui/configGeneral.qml:68
 msgid "Pick a colour for the moon"
 msgstr ""
 
-#: ui/configGeneral.qml:67
+#: ui/configGeneral.qml:81
 msgid "Preview"
 msgstr ""
 
-#: ui/configGeneral.qml:110
+#: ui/configGeneral.qml:124
 msgid "Show grid"
 msgstr ""
 
-#: ui/configGeneral.qml:115
+#: ui/configGeneral.qml:129
 msgid "Tycho"
 msgstr ""
 
-#: ui/configGeneral.qml:120
+#: ui/configGeneral.qml:134
 msgid "Copernicus"
 msgstr ""
 
-#: ui/configGeneral.qml:127
+#: ui/configGeneral.qml:141
 msgid "Disk Colour"
 msgstr ""
 
-#: ui/configGeneral.qml:149
-msgid "Hemisphere"
+#: ui/configGeneral.qml:163
+msgid "Latitude"
 msgstr ""
 
-#: ui/configGeneral.qml:158
-msgid "Northern"
+#: ui/configGeneral.qml:192
+msgid "Use current latitude"
 msgstr ""
 
-#: ui/configGeneral.qml:159
-msgid "Southern"
-msgstr ""
-
-#: ui/configGeneral.qml:165
+#: ui/configGeneral.qml:208
 msgid "Date Format"
 msgstr ""
 
-#: ui/configGeneral.qml:174
+#: ui/configGeneral.qml:217
 msgid "Text date"
 msgstr ""
 
-#: ui/configGeneral.qml:175
+#: ui/configGeneral.qml:218
 msgid "Short date"
 msgstr ""
 
-#: ui/configGeneral.qml:176
+#: ui/configGeneral.qml:219
 msgid "Long date"
 msgstr ""
 
-#: ui/configGeneral.qml:177
+#: ui/configGeneral.qml:220
 msgid "ISO date"
 msgstr ""
 
-#: ui/configGeneral.qml:178
+#: ui/configGeneral.qml:221
 msgid "Custom"
 msgstr ""
 
-#: ui/configGeneral.qml:184
+#: ui/configGeneral.qml:227
 msgid "Date Format String"
 msgstr ""
 
-#: ui/configGeneral.qml:193
+#: ui/configGeneral.qml:236
 msgid "Background"
 msgstr ""
 
-#: ui/configGeneral.qml:197
+#: ui/configGeneral.qml:240
 msgid "Show background"
 msgstr ""
 
-#: ui/configGeneral.qml:204
+#: ui/configGeneral.qml:247
 msgid "Transparent shadow"
 msgstr ""
 
