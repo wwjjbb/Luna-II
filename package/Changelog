@@ -1,3 +1,8 @@
+version 2.1 (2019-09-19)
+- Updates by Ismael
+  - localisation, es
+  - option to make shadow transparent
+  - use latitude to set image orientation, replaces the North/South selection
 version 2.1-beta3 (2017-07-02)
 - got localisation working, fr & ru for starters, need help
 - LunaWidget stretches to fit, not fixed size anymore

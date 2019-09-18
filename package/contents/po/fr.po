@@ -6,12 +6,12 @@
 #
 # Bill Binder <dxtwjb@gmail.com>, 2017
 # Glad Deschrijver <glad.deschrijver@gmail.com>, 2012.
-#: ui/configGeneral.qml:186
+#: ui/configGeneral.qml:195
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
-"POT-Creation-Date: 2019-07-21 14:16+0200\n"
+"POT-Creation-Date: 2019-09-18 23:42+0100\n"
 "PO-Revision-Date: 2017-07-01 23:54+0100\n"
 "Last-Translator: Bill Binder <dxtwjb@gmail.com>\n"
 "Language-Team: n/a\n"
@@ -99,76 +99,76 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "dxtwjb@gmail.com"
 
-#: ui/configGeneral.qml:68
+#: ui/configGeneral.qml:77
 msgid "Pick a colour for the moon"
 msgstr "Choisissez une couleur pour la lune"
 
-#: ui/configGeneral.qml:81
+#: ui/configGeneral.qml:90
 msgid "Preview"
 msgstr "Aperçu de l'image"
 
-#: ui/configGeneral.qml:124
+#: ui/configGeneral.qml:133
 msgid "Show grid"
 msgstr "Afficher la grille de la carte"
 
-#: ui/configGeneral.qml:129
+#: ui/configGeneral.qml:138
 msgid "Tycho"
 msgstr ""
 
-#: ui/configGeneral.qml:134
+#: ui/configGeneral.qml:143
 msgid "Copernicus"
 msgstr "Copernic"
 
-#: ui/configGeneral.qml:141
+#: ui/configGeneral.qml:150
 msgid "Disk Colour"
 msgstr "Couleur de la lune"
 
-#: ui/configGeneral.qml:163
+#: ui/configGeneral.qml:172
 msgid "Latitude"
 msgstr ""
 
-#: ui/configGeneral.qml:192
+#: ui/configGeneral.qml:201
 msgid "Use current latitude"
 msgstr ""
 
-#: ui/configGeneral.qml:208
+#: ui/configGeneral.qml:211
 msgid "Date Format"
 msgstr "Format des dates"
 
-#: ui/configGeneral.qml:217
+#: ui/configGeneral.qml:220
 msgid "Text date"
 msgstr "Date textuelle"
 
-#: ui/configGeneral.qml:218
+#: ui/configGeneral.qml:221
 msgid "Short date"
 msgstr "Date courte"
 
-#: ui/configGeneral.qml:219
+#: ui/configGeneral.qml:222
 msgid "Long date"
 msgstr "Date longue"
 
-#: ui/configGeneral.qml:220
+#: ui/configGeneral.qml:223
 msgid "ISO date"
 msgstr "Date de l'ISO"
 
-#: ui/configGeneral.qml:221
+#: ui/configGeneral.qml:224
 msgid "Custom"
 msgstr "Personnaliser"
 
-#: ui/configGeneral.qml:227
+#: ui/configGeneral.qml:230
 msgid "Date Format String"
 msgstr "Format des dates personnalisé"
 
-#: ui/configGeneral.qml:236
+#: ui/configGeneral.qml:239
 #, fuzzy
 msgid "Background"
 msgstr "Montrer arrière-plan"
 
-#: ui/configGeneral.qml:240
+#: ui/configGeneral.qml:243
 msgid "Show background"
 msgstr "Montrer arrière-plan"
 
-#: ui/configGeneral.qml:247
+#: ui/configGeneral.qml:250
 msgid "Transparent shadow"
 msgstr ""
 
