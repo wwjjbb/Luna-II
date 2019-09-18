@@ -1,0 +1,236 @@
+# plasma-applet-luna-qml language translation file.
+# Copyright (C) 2017 Bill Binder
+# Copyright (C) 2011, 2012 Glad Deschrijver
+# This file is distributed under the same license as the plasma-applet-luna-qml package.
+#
+#
+# Bill Binder <dxtwjb@gmail.com>, 2017.
+# Glad Deschrijver <glad.deschrijver@gmail.com>, 2012.
+# Ismael <ismailof@github.com>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: 2.1\n"
+"Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
+"POT-Creation-Date: 2019-07-21 00:54+0200\n"
+"PO-Revision-Date: 2019-07-20 16:24+0200\n"
+"Last-Translator: Ismael <ismailof@github.com>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 19.04.3\n"
+
+#: code/lunacalc.js:129
+msgid "First Quarter"
+msgstr "Cuarto creciente"
+
+#: code/lunacalc.js:133 code/lunacalc.js:147
+msgid "New Moon"
+msgstr "Luna Nueva"
+
+#: code/lunacalc.js:135 code/lunacalc.js:137
+msgid "Waxing Crescent"
+msgstr "Luna creciente"
+
+#: code/lunacalc.js:135
+msgid "Yesterday was New Moon"
+msgstr "Ayer hubo luna nueva"
+
+#: code/lunacalc.js:137
+msgid "%1 days since New Moon"
+msgstr "%1 días desde la luna nueva"
+
+#: code/lunacalc.js:143
+msgid "Last Quarter"
+msgstr "Cuarto menguante"
+
+#: code/lunacalc.js:149 code/lunacalc.js:151
+msgid "Waning Crescent"
+msgstr "Luna menguante"
+
+#: code/lunacalc.js:149
+msgid "Tomorrow is New Moon"
+msgstr "Mañana habrá luna nueva"
+
+#: code/lunacalc.js:151
+msgid "%1 days to New Moon"
+msgstr "%1 días hasta la luna nueva"
+
+#: code/lunacalc.js:157
+msgid "Full Moon"
+msgstr "Luna Llena"
+
+#: code/lunacalc.js:159 code/lunacalc.js:161
+msgid "Waxing Gibbous"
+msgstr "Luna creciente convexa"
+
+#: code/lunacalc.js:159
+msgid "Tomorrow is Full Moon"
+msgstr "Mañana habrá luna llena"
+
+#: code/lunacalc.js:161
+msgid "%1 days to Full Moon"
+msgstr "%1 días para la luna llena"
+
+#: code/lunacalc.js:163 code/lunacalc.js:165
+msgid "Waning Gibbous"
+msgstr "Luna menguante convexa"
+
+#: code/lunacalc.js:163
+msgid "Yesterday was Full Moon"
+msgstr "Ayer hubo luna llena"
+
+#: code/lunacalc.js:165
+msgid "%1 days since Full Moon"
+msgstr "%1 días desde la luna llena"
+
+#: config/config.qml:24
+msgid "General"
+msgstr "General"
+
+#: po/rc.js:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ismael Asensio"
+
+#: po/rc.js:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ismailof@github.com"
+
+#: ui/configGeneral.qml:53
+msgid "Pick a colour for the moon"
+msgstr "Seleccione un color para la luna"
+
+#: ui/configGeneral.qml:66
+msgid "Preview"
+msgstr "Vista previa"
+
+#: ui/configGeneral.qml:108
+msgid "Show grid"
+msgstr "Mostrar rejilla"
+
+#: ui/configGeneral.qml:113
+msgid "Tycho"
+msgstr ""
+
+#: ui/configGeneral.qml:118
+msgid "Copernicus"
+msgstr "Copérnico"
+
+#: ui/configGeneral.qml:125
+msgid "Disk Colour"
+msgstr "Color del disco"
+
+#: ui/configGeneral.qml:147
+msgid "Hemisphere"
+msgstr "Hemisferio"
+
+#: ui/configGeneral.qml:156
+msgid "Northern"
+msgstr "Norte"
+
+#: ui/configGeneral.qml:157
+msgid "Southern"
+msgstr "Sur"
+
+#: ui/configGeneral.qml:163
+msgid "Date Format"
+msgstr "Formato de fecha"
+
+#: ui/configGeneral.qml:172
+msgid "Text date"
+msgstr "Fecha en texto"
+
+#: ui/configGeneral.qml:173
+msgid "Short date"
+msgstr "Fecha corta"
+
+#: ui/configGeneral.qml:174
+msgid "Long date"
+msgstr "Fecha larga"
+
+#: ui/configGeneral.qml:175
+msgid "ISO date"
+msgstr "Fecha ISO"
+
+#: ui/configGeneral.qml:176
+msgid "Custom"
+msgstr "Personalizar"
+
+#: ui/configGeneral.qml:182
+msgid "Date Format String"
+msgstr "Formato de fecha personalizada"
+
+#: ui/configGeneral.qml:193
+msgid "Show background"
+msgstr "Mostrar fondo"
+
+#: ui/LunaWidget.qml:116
+msgid "Last new:"
+msgstr "Última luna nueva:"
+
+#: ui/LunaWidget.qml:123
+msgid "First quarter:"
+msgstr "Cuarto creciente:"
+
+#: ui/LunaWidget.qml:130
+msgid "Full moon:"
+msgstr "Luna Llena:"
+
+#: ui/LunaWidget.qml:137
+msgid "Third quarter:"
+msgstr "Cuarto menguante:"
+
+#: ui/LunaWidget.qml:144
+msgid "Next new:"
+msgstr "Próxima luna nueva:"
+
+#~ msgid "Lunar Image"
+#~ msgstr "Image lunaire"
+
+#~ msgid "Previous image"
+#~ msgstr "L'image précédente"
+
+#~ msgid "Next image"
+#~ msgstr "L'image suivante"
+
+#~ msgid "Light grey image"
+#~ msgstr "Image gris clair"
+
+#~ msgid "Darker grey image"
+#~ msgstr "Image gris plus foncée"
+
+#~ msgid "Original image"
+#~ msgstr "Image originale"
+
+#~ msgid "Yellow disk"
+#~ msgstr "Disque jaune"
+
+#~ msgid "Luna"
+#~ msgstr "Lune"
+
+#~ msgid "Show moon as seen in:"
+#~ msgstr "Afficher la lune comme vue dans :"
+
+#~ msgid "Show &background"
+#~ msgstr "Montrer &arrière-plan"
+
+#~ msgid "&Date format:"
+#~ msgstr "Format des &dates :"
+
+#~ msgid ""
+#~ "<p>The date format string entered here will be used if \"Custom\" is "
+#~ "selected in the combo box above.</p><p>The format of the string should be "
+#~ "as described in <a href=\"http://qt-project.org/doc/qt-4.8/qml-qt."
+#~ "html#formatDateTime-method\">the Qt documentation</a>.</p>"
+#~ msgstr ""
+#~ "<p>Le format introduit ici s'utilise pour formatter les dates lorsque "
+#~ "\"Personnaliser\" est sélectionné ci-dessus.</p><p>Le format doit être "
+#~ "spécifié comme décrit dans <a href=\"http://qt-project.org/doc/qt-4.8/qml-"
+#~ "qt.html#formatDateTime-method\">la documentation de Qt</a>."
+
+#~ msgid "Enter date format string..."
+#~ msgstr "Introduisez le format des dates..."
