@@ -1,0 +1,189 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+#: ui/configGeneral.qml:195
+# Heimen Stoffels <vistausss@outlook.com>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://github.com/wwjjbb/Luna-II/issues\n"
+"POT-Creation-Date: 2019-09-18 23:42+0100\n"
+"PO-Revision-Date: 2019-09-22 13:13+0200\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 19.11.70\n"
+
+#: code/lunacalc.js:129
+msgid "First Quarter"
+msgstr "Eerste kwartier"
+
+#: code/lunacalc.js:133 code/lunacalc.js:147
+msgid "New Moon"
+msgstr "Nieuwe maan"
+
+#: code/lunacalc.js:135 code/lunacalc.js:137
+msgid "Waxing Crescent"
+msgstr "Wassende maan"
+
+#: code/lunacalc.js:135
+msgid "Yesterday was New Moon"
+msgstr "Gisteren was de nieuwe maan"
+
+#: code/lunacalc.js:137
+msgid "%1 days since New Moon"
+msgstr "%1 dagen verstreken sinds de nieuwe maan"
+
+#: code/lunacalc.js:143
+msgid "Last Quarter"
+msgstr "Laatste kwartier"
+
+#: code/lunacalc.js:149 code/lunacalc.js:151
+msgid "Waning Crescent"
+msgstr "Afnemende maan"
+
+#: code/lunacalc.js:149
+msgid "Tomorrow is New Moon"
+msgstr "Morgen verschijnt de nieuwe maan"
+
+#: code/lunacalc.js:151
+msgid "%1 days to New Moon"
+msgstr "Over %1 dagen verschijnt de nieuwe maan"
+
+#: code/lunacalc.js:157
+msgid "Full Moon"
+msgstr "Volle maan"
+
+#: code/lunacalc.js:159 code/lunacalc.js:161
+msgid "Waxing Gibbous"
+msgstr "Vooruitspringende maan"
+
+#: code/lunacalc.js:159
+msgid "Tomorrow is Full Moon"
+msgstr "Morgen is het volle maan"
+
+#: code/lunacalc.js:161
+msgid "%1 days to Full Moon"
+msgstr "Over %1 dagen is het volle maan"
+
+#: code/lunacalc.js:163 code/lunacalc.js:165
+msgid "Waning Gibbous"
+msgstr "Afnemende maan"
+
+#: code/lunacalc.js:163
+msgid "Yesterday was Full Moon"
+msgstr "Gisteren was het volle maan"
+
+#: code/lunacalc.js:165
+msgid "%1 days since Full Moon"
+msgstr "%1 dagen verstreken sinds volle maan"
+
+#: config/config.qml:24
+msgid "General"
+msgstr "Algemeen"
+
+#: po/rc.js:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Heimen Stoffels"
+
+#: po/rc.js:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "vistausss@outlook.com"
+
+#: ui/configGeneral.qml:77
+msgid "Pick a colour for the moon"
+msgstr "Kies een maankleur"
+
+#: ui/configGeneral.qml:90
+msgid "Preview"
+msgstr "Voorbeeld"
+
+#: ui/configGeneral.qml:133
+msgid "Show grid"
+msgstr "Raster tonen"
+
+#: ui/configGeneral.qml:138
+msgid "Tycho"
+msgstr "Tycho"
+
+#: ui/configGeneral.qml:143
+msgid "Copernicus"
+msgstr "Copernicus"
+
+#: ui/configGeneral.qml:150
+msgid "Disk Colour"
+msgstr "Schijfkleur"
+
+#: ui/configGeneral.qml:172
+msgid "Latitude"
+msgstr "Breedtegraad"
+
+#: ui/configGeneral.qml:201
+msgid "Use current latitude"
+msgstr "Huidige breedtegraad gebruiken"
+
+#: ui/configGeneral.qml:211
+msgid "Date Format"
+msgstr "Datumopmaak"
+
+#: ui/configGeneral.qml:220
+msgid "Text date"
+msgstr "Tekstdatum"
+
+#: ui/configGeneral.qml:221
+msgid "Short date"
+msgstr "Verkorte datum"
+
+#: ui/configGeneral.qml:222
+msgid "Long date"
+msgstr "Volledige datum"
+
+#: ui/configGeneral.qml:223
+msgid "ISO date"
+msgstr "ISO-datum"
+
+#: ui/configGeneral.qml:224
+msgid "Custom"
+msgstr "Aangepast"
+
+#: ui/configGeneral.qml:230
+msgid "Date Format String"
+msgstr "Datumopmaakstring"
+
+#: ui/configGeneral.qml:239
+msgid "Background"
+msgstr "Achtergrond"
+
+#: ui/configGeneral.qml:243
+msgid "Show background"
+msgstr "Achtergrond tonen"
+
+#: ui/configGeneral.qml:250
+msgid "Transparent shadow"
+msgstr "Doorzichtige schaduw"
+
+#: ui/LunaWidget.qml:116
+msgid "Last new:"
+msgstr "Vorige nieuwe:"
+
+#: ui/LunaWidget.qml:123
+msgid "First quarter:"
+msgstr "Eerste kwartier:"
+
+#: ui/LunaWidget.qml:130
+msgid "Full moon:"
+msgstr "Volle maan:"
+
+#: ui/LunaWidget.qml:137
+msgid "Third quarter:"
+msgstr "Derde kwartier:"
+
+#: ui/LunaWidget.qml:144
+msgid "Next new:"
+msgstr "Volgende nieuwe:"
